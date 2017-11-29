@@ -8,17 +8,26 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
+    //MARK: - Outlets
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    @IBAction func buttonTapped(_ sender: Any) {
-        let loginRequest = Login(email: "email2@email.com", password: "password")
+    //MARK: - Actions
+    @IBAction private func loginButtonTapped(_ sender: Any) {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        
+        let loginRequest = Login(email: email, password: password)
         let successHandler: ((User?) -> Void) = { [unowned self] user in
             guard let user = user else { self.showError(); return }
             User.login(user: user)
+            print(user)
         }
         
         let errorHandler: ((ErrorResponse?) -> Void) = { [unowned self] error in

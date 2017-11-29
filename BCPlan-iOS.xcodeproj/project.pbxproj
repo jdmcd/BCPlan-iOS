@@ -11,8 +11,9 @@
 		394FBFF51FCEF01300AFB6A0 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFF41FCEF01300AFB6A0 /* Project.swift */; };
 		394FBFF81FCEF02700AFB6A0 /* ProjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFF71FCEF02700AFB6A0 /* ProjectResponse.swift */; };
 		394FBFFA1FCF0E6F00AFB6A0 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFF91FCF0E6F00AFB6A0 /* UIViewController+Alert.swift */; };
+		394FBFFC1FCF155800AFB6A0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFFB1FCF155800AFB6A0 /* RegisterViewController.swift */; };
 		39B74CC31FCE4E810037D263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CC21FCE4E810037D263 /* AppDelegate.swift */; };
-		39B74CC51FCE4E810037D263 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CC41FCE4E810037D263 /* ViewController.swift */; };
+		39B74CC51FCE4E810037D263 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CC41FCE4E810037D263 /* LoginViewController.swift */; };
 		39B74CC81FCE4E810037D263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B74CC61FCE4E810037D263 /* Main.storyboard */; };
 		39B74CCA1FCE4E810037D263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39B74CC91FCE4E810037D263 /* Assets.xcassets */; };
 		39B74CCD1FCE4E810037D263 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B74CCB1FCE4E810037D263 /* LaunchScreen.storyboard */; };
@@ -38,9 +39,10 @@
 		394FBFF41FCEF01300AFB6A0 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		394FBFF71FCEF02700AFB6A0 /* ProjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectResponse.swift; sourceTree = "<group>"; };
 		394FBFF91FCF0E6F00AFB6A0 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		394FBFFB1FCF155800AFB6A0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		39B74CBF1FCE4E810037D263 /* BCPlan-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BCPlan-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B74CC21FCE4E810037D263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		39B74CC41FCE4E810037D263 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		39B74CC41FCE4E810037D263 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		39B74CC71FCE4E810037D263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		39B74CC91FCE4E810037D263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39B74CCC1FCE4E810037D263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -129,7 +131,8 @@
 		39B74CD91FCE50B60037D263 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				39B74CC41FCE4E810037D263 /* ViewController.swift */,
+				394FBFFB1FCF155800AFB6A0 /* RegisterViewController.swift */,
+				39B74CC41FCE4E810037D263 /* LoginViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -335,7 +338,7 @@
 				39B74CF61FCE78330037D263 /* ErrorResponse.swift in Sources */,
 				39B74CEA1FCE56E60037D263 /* LoginRequest.swift in Sources */,
 				39B74CE31FCE55760037D263 /* DefaultHeader.swift in Sources */,
-				39B74CC51FCE4E810037D263 /* ViewController.swift in Sources */,
+				39B74CC51FCE4E810037D263 /* LoginViewController.swift in Sources */,
 				39B74CF01FCE5C160037D263 /* Model.swift in Sources */,
 				39B74CF41FCE72350037D263 /* RegisterRequest.swift in Sources */,
 				394FBFF31FCEEF7700AFB6A0 /* GetProjects.swift in Sources */,
@@ -343,6 +346,7 @@
 				394FBFF81FCEF02700AFB6A0 /* ProjectResponse.swift in Sources */,
 				39B74CD51FCE505B0037D263 /* AlamofireHelper.swift in Sources */,
 				39B74CD71FCE50AA0037D263 /* API.swift in Sources */,
+				394FBFFC1FCF155800AFB6A0 /* RegisterViewController.swift in Sources */,
 				39B74CDF1FCE523F0037D263 /* Login.swift in Sources */,
 				39B74CC31FCE4E810037D263 /* AppDelegate.swift in Sources */,
 				39B74CE51FCE56970037D263 /* APIRepresentable.swift in Sources */,
