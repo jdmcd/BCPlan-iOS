@@ -22,8 +22,4 @@ struct ProjectResponse: Codable {
         
         return projects
     }
-    
-    func threeDimensionalArray() -> [[Project]] {
-        return [admin, accepted, pending]
-    }
 }

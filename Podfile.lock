@@ -1,18 +1,21 @@
 PODS:
   - Alamofire (4.5.0)
+  - DZNEmptyDataSet (1.8.1)
   - PKHUD (5.0.0)
   - ViewAnimator (1.0.2)
 
 DEPENDENCIES:
   - Alamofire
+  - DZNEmptyDataSet
   - PKHUD (~> 5.0)
   - ViewAnimator
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   ViewAnimator: d7b18e0be98e05807f61ad886a36363727209377
 
-PODFILE CHECKSUM: 3a9b345757296c1904b420c831372f6886e394f4
+PODFILE CHECKSUM: 1613216b61e59d69a3774f3ccc2ab6f1d250b4d0
 
 COCOAPODS: 1.3.1

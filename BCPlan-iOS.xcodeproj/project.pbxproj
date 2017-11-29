@@ -10,6 +10,8 @@
 		391B64FA1FCF546800C7377B /* ProjectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B64F91FCF546800C7377B /* ProjectDetailsViewController.swift */; };
 		391B64FC1FCF54BB00C7377B /* GetProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B64FB1FCF54BB00C7377B /* GetProject.swift */; };
 		391B65001FCF55B300C7377B /* DetailedProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B64FF1FCF55B300C7377B /* DetailedProject.swift */; };
+		391B65031FCF59D900C7377B /* TableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B65021FCF59D900C7377B /* TableSectionHeader.swift */; };
+		391B65051FCF59E800C7377B /* TableSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 391B65041FCF59E800C7377B /* TableSectionHeader.xib */; };
 		394FBFF31FCEEF7700AFB6A0 /* GetProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFF21FCEEF7700AFB6A0 /* GetProjects.swift */; };
 		394FBFF51FCEF01300AFB6A0 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFF41FCEF01300AFB6A0 /* Project.swift */; };
 		394FBFF81FCEF02700AFB6A0 /* ProjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFF71FCEF02700AFB6A0 /* ProjectResponse.swift */; };
@@ -43,6 +45,8 @@
 		391B64F91FCF546800C7377B /* ProjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsViewController.swift; sourceTree = "<group>"; };
 		391B64FB1FCF54BB00C7377B /* GetProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProject.swift; sourceTree = "<group>"; };
 		391B64FF1FCF55B300C7377B /* DetailedProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProject.swift; sourceTree = "<group>"; };
+		391B65021FCF59D900C7377B /* TableSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeader.swift; sourceTree = "<group>"; };
+		391B65041FCF59E800C7377B /* TableSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableSectionHeader.xib; sourceTree = "<group>"; };
 		394FBFF21FCEEF7700AFB6A0 /* GetProjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProjects.swift; sourceTree = "<group>"; };
 		394FBFF41FCEF01300AFB6A0 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		394FBFF71FCEF02700AFB6A0 /* ProjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectResponse.swift; sourceTree = "<group>"; };
@@ -86,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		391B65011FCF59B300C7377B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				391B65021FCF59D900C7377B /* TableSectionHeader.swift */,
+				391B65041FCF59E800C7377B /* TableSectionHeader.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		394FBFF61FCEF01800AFB6A0 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +128,7 @@
 		39B74CC11FCE4E810037D263 /* BCPlan-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				391B65011FCF59B300C7377B /* Views */,
 				39B74CE81FCE56DE0037D263 /* Requests */,
 				39B74CDC1FCE522B0037D263 /* Models */,
 				39B74CD81FCE50B00037D263 /* Helpers */,
@@ -284,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39B74CCD1FCE4E810037D263 /* LaunchScreen.storyboard in Resources */,
+				391B65051FCF59E800C7377B /* TableSectionHeader.xib in Resources */,
 				39B74CCA1FCE4E810037D263 /* Assets.xcassets in Resources */,
 				39B74CC81FCE4E810037D263 /* Main.storyboard in Resources */,
 			);
@@ -318,12 +333,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BCPlan-iOS/Pods-BCPlan-iOS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/ViewAnimator/ViewAnimator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ViewAnimator.framework",
 			);
@@ -355,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39B74CF61FCE78330037D263 /* ErrorResponse.swift in Sources */,
+				391B65031FCF59D900C7377B /* TableSectionHeader.swift in Sources */,
 				394FC0021FCF49D000AFB6A0 /* Constants.swift in Sources */,
 				391B65001FCF55B300C7377B /* DetailedProject.swift in Sources */,
 				391B64FC1FCF54BB00C7377B /* GetProject.swift in Sources */,
@@ -523,7 +541,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.162llc.BCPlan-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -539,7 +557,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.162llc.BCPlan-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
