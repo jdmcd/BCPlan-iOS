@@ -14,6 +14,12 @@
 		39B74CCD1FCE4E810037D263 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B74CCB1FCE4E810037D263 /* LaunchScreen.storyboard */; };
 		39B74CD51FCE505B0037D263 /* AlamofireHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CD41FCE505B0037D263 /* AlamofireHelper.swift */; };
 		39B74CD71FCE50AA0037D263 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CD61FCE50AA0037D263 /* API.swift */; };
+		39B74CDF1FCE523F0037D263 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CDE1FCE523F0037D263 /* Login.swift */; };
+		39B74CE31FCE55760037D263 /* DefaultHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CE21FCE55760037D263 /* DefaultHeader.swift */; };
+		39B74CE51FCE56970037D263 /* APIRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CE41FCE56970037D263 /* APIRepresentable.swift */; };
+		39B74CE71FCE56CE0037D263 /* Encodable+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CE61FCE56CE0037D263 /* Encodable+Alamofire.swift */; };
+		39B74CEA1FCE56E60037D263 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CE91FCE56E60037D263 /* LoginRequest.swift */; };
+		39B74CEC1FCE57640037D263 /* TokenHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CEB1FCE57640037D263 /* TokenHeader.swift */; };
 		5A56E977369C602C8B0F2BFB /* Pods_BCPlan_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7A94DFC478439CF1C7147F /* Pods_BCPlan_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +34,12 @@
 		39B74CCE1FCE4E810037D263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39B74CD41FCE505B0037D263 /* AlamofireHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireHelper.swift; sourceTree = "<group>"; };
 		39B74CD61FCE50AA0037D263 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		39B74CDE1FCE523F0037D263 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		39B74CE21FCE55760037D263 /* DefaultHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHeader.swift; sourceTree = "<group>"; };
+		39B74CE41FCE56970037D263 /* APIRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRepresentable.swift; sourceTree = "<group>"; };
+		39B74CE61FCE56CE0037D263 /* Encodable+Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Alamofire.swift"; sourceTree = "<group>"; };
+		39B74CE91FCE56E60037D263 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		39B74CEB1FCE57640037D263 /* TokenHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenHeader.swift; sourceTree = "<group>"; };
 		6FDF4A454B1C74CB174620DC /* Pods-BCPlan-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCPlan-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCPlan-iOS/Pods-BCPlan-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ED7A94DFC478439CF1C7147F /* Pods_BCPlan_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCPlan_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -65,6 +77,8 @@
 		39B74CC11FCE4E810037D263 /* BCPlan-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				39B74CE81FCE56DE0037D263 /* Requests */,
+				39B74CDC1FCE522B0037D263 /* Models */,
 				39B74CD81FCE50B00037D263 /* Helpers */,
 				39B74CDA1FCE50C80037D263 /* Misc */,
 				39B74CD91FCE50B60037D263 /* View Controllers */,
@@ -76,8 +90,10 @@
 		39B74CD81FCE50B00037D263 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				39B74CE41FCE56970037D263 /* APIRepresentable.swift */,
 				39B74CD41FCE505B0037D263 /* AlamofireHelper.swift */,
 				39B74CD61FCE50AA0037D263 /* API.swift */,
+				39B74CE61FCE56CE0037D263 /* Encodable+Alamofire.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -107,6 +123,32 @@
 				39B74CC61FCE4E810037D263 /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		39B74CDC1FCE522B0037D263 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				39B74CDD1FCE52330037D263 /* Requests */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		39B74CDD1FCE52330037D263 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				39B74CDE1FCE523F0037D263 /* Login.swift */,
+				39B74CE21FCE55760037D263 /* DefaultHeader.swift */,
+				39B74CEB1FCE57640037D263 /* TokenHeader.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		39B74CE81FCE56DE0037D263 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				39B74CE91FCE56E60037D263 /* LoginRequest.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		9EA6A0D6BE429E34806B52D9 /* Pods */ = {
@@ -255,10 +297,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39B74CEA1FCE56E60037D263 /* LoginRequest.swift in Sources */,
+				39B74CE31FCE55760037D263 /* DefaultHeader.swift in Sources */,
 				39B74CC51FCE4E810037D263 /* ViewController.swift in Sources */,
 				39B74CD51FCE505B0037D263 /* AlamofireHelper.swift in Sources */,
 				39B74CD71FCE50AA0037D263 /* API.swift in Sources */,
+				39B74CDF1FCE523F0037D263 /* Login.swift in Sources */,
 				39B74CC31FCE4E810037D263 /* AppDelegate.swift in Sources */,
+				39B74CE51FCE56970037D263 /* APIRepresentable.swift in Sources */,
+				39B74CEC1FCE57640037D263 /* TokenHeader.swift in Sources */,
+				39B74CE71FCE56CE0037D263 /* Encodable+Alamofire.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +446,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BET84ZKY59;
-				INFOPLIST_FILE = "BCPlan-iOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BCPlan-iOS/Misc/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.162llc.BCPlan-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,7 +462,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BET84ZKY59;
-				INFOPLIST_FILE = "BCPlan-iOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BCPlan-iOS/Misc/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.162llc.BCPlan-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
