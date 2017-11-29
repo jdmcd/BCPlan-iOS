@@ -33,21 +33,24 @@ class LoginViewController: UIViewController {
         
         HUD.show(.progress)
         let loginRequest = Login(email: email, password: password)
-        let successHandler: ((User?) -> Void) = { [unowned self] user in
+        let successHandler: ((User?) -> Void) = { user in
             HUD.hide()
             
             guard let user = user else { self.showError(); return }
             User.login(user: user)
-            print(user)
+            
+            //post the notification
+            NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.logInRegister), object: nil)
+            self.dismiss(animated: true, completion: nil)
         }
         
-        let errorHandler: ((ErrorResponse?) -> Void) = { [unowned self] error in
+        let errorHandler: ((ErrorResponse?) -> Void) = { error in
             HUD.hide()
             
             self.showError(errorResponse: error)
         }
         
-        LoginRequest.request(parameters: loginRequest, success: successHandler, error: errorHandler)
+        LoginRequest().request(parameters: loginRequest, success: successHandler, error: errorHandler)
     }
 }
 

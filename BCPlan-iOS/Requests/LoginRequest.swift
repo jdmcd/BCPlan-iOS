@@ -11,7 +11,7 @@ import Alamofire
 
 struct LoginRequest: APIRequestRepresentable {
     typealias CodableType = User
-    static var method: Alamofire.HTTPMethod = .post
-    static var endpoint: API.Endpoint = .login
-    static var isAuthedRequest = false
+    var method: Alamofire.HTTPMethod = .post
+    var endpoint: API.Endpoint = .login
+    var isAuthedRequest = false
 }

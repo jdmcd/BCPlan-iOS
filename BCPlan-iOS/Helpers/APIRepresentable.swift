@@ -15,47 +15,47 @@ protocol APIRequestRepresentable {
     typealias SuccessAPIResponse = (_ object: CodableType?) -> Void
     typealias ErrorAPIResponse = (_ error: ErrorResponse?) -> Void
     
-    static var method: Alamofire.HTTPMethod { get set }
-    static var endpoint: API.Endpoint { get set }
-    static var isAuthedRequest: Bool { get set }
-    static func request(parameters: Codable?, success: @escaping SuccessAPIResponse, error: @escaping ErrorAPIResponse)
-    static func defaultHeaderObject() -> DefaultHeader
-    static func defaultHeader() -> HTTPHeaders
-    static func tokenHeader(token: String) -> HTTPHeaders
-    static func url() -> String
+    var method: Alamofire.HTTPMethod { get set }
+    var endpoint: API.Endpoint { get set }
+    var isAuthedRequest: Bool { get set }
+    func request(parameters: Codable?, success: @escaping SuccessAPIResponse, error: @escaping ErrorAPIResponse)
+    func defaultHeaderObject() -> DefaultHeader
+    func defaultHeader() -> HTTPHeaders
+    func tokenHeader(token: String) -> HTTPHeaders
+    func url() -> String
 }
 
 extension APIRequestRepresentable {
-    static func defaultHeaderObject() -> DefaultHeader {
+    func defaultHeaderObject() -> DefaultHeader {
         return DefaultHeader(contentType: "application/json; charset=utf-8", apiKey: API.apiKey)
     }
     
-    static func defaultHeader() -> HTTPHeaders {
+    func defaultHeader() -> HTTPHeaders {
         return defaultHeaderObject().asStringValueDictionary()
     }
     
-    static func tokenHeader(token: String) -> HTTPHeaders {
+    func tokenHeader(token: String) -> HTTPHeaders {
         return TokenHeader(defaultHeader: defaultHeaderObject(), token: "Bearer \(token)").asStringValueDictionary()
     }
     
-    static func url() -> String {
+    func url() -> String {
         return API.createUrl(endpoint: endpoint)
     }
 
     //MARK: - Request functions
-    static func request(user: User?, success: @escaping SuccessAPIResponse, error: @escaping ErrorAPIResponse) {
+    func request(user: User?, success: @escaping SuccessAPIResponse, error: @escaping ErrorAPIResponse) {
         request(parameters: nil, user: user, success: success, error: error)
     }
 
-    static func request(parameters: Codable?, success: @escaping SuccessAPIResponse, error: @escaping ErrorAPIResponse) {
+    func request(parameters: Codable?, success: @escaping SuccessAPIResponse, error: @escaping ErrorAPIResponse) {
         request(parameters: parameters, user: nil, success: success, error: error)
     }
 
-    static func request(success: @escaping SuccessAPIResponse, error: @escaping ErrorAPIResponse) {
+    func request(success: @escaping SuccessAPIResponse, error: @escaping ErrorAPIResponse) {
         request(parameters: nil, user: nil, success: success, error: error)
     }
     
-    static func request(parameters: Codable?, user: User?, success: @escaping SuccessAPIResponse, error: @escaping ErrorAPIResponse) {
+    func request(parameters: Codable?, user: User?, success: @escaping SuccessAPIResponse, error: @escaping ErrorAPIResponse) {
         //validate whether or not there should be a user
         if isAuthedRequest && user == nil {
             error(ErrorResponse(reason: "This is an authorized request and a user object was not passed in"))

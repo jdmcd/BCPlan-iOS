@@ -41,21 +41,24 @@ class RegisterViewController: UIViewController {
         
         HUD.show(.progress)
         let registerRequest = Register(name: name, email: email, password: password)
-        let successHandler: ((User?) -> Void) = { [unowned self] user in
+        let successHandler: ((User?) -> Void) = { user in
             HUD.hide()
             
             guard let user = user else { self.showError(); return }
             User.login(user: user)
-            print(user)
+            
+            //post the notification
+            NotificationCenter.default.post(name: Notification.Name(rawValue: Constants.logInRegister), object: nil)
+            self.dismiss(animated: true, completion: nil)
         }
         
-        let errorHandler: ((ErrorResponse?) -> Void) = { [unowned self] error in
+        let errorHandler: ((ErrorResponse?) -> Void) = { error in
             HUD.hide()
             
             self.showError(errorResponse: error)
         }
         
-        RegisterRequest.request(parameters: registerRequest, success: successHandler, error: errorHandler)
+        RegisterRequest().request(parameters: registerRequest, success: successHandler, error: errorHandler)
     }
 }
 

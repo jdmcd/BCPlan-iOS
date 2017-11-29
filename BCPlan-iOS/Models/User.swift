@@ -31,9 +31,11 @@ extension User {
     static func login(user: User) {
         guard let userData = user.jsonData else { return }
         UserDefaults.standard.set(userData, forKey: userDefaultsKey)
+        UserDefaults.standard.synchronize()
     }
     
     static func clearCurrentUser() {
         UserDefaults.standard.removeObject(forKey: userDefaultsKey)
+        UserDefaults.standard.synchronize()
     }
 }
