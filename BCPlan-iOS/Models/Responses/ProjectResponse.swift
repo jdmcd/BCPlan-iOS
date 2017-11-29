@@ -9,9 +9,9 @@
 import Foundation
 
 struct ProjectResponse: Codable {
-    let admin: [Project]
-    let accepted: [Project]
-    let pending: [Project]
+    var admin: [Project]
+    var accepted: [Project]
+    var pending: [Project]
     
     func projects() -> [Project] {
         var projects = [Project]()

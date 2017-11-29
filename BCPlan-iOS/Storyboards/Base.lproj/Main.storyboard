@@ -46,7 +46,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f0M-QQ-mXX"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Projects" largeTitleDisplayMode="always" id="pJy-tj-GdG"/>
+                    <navigationItem key="navigationItem" title="My Projects" largeTitleDisplayMode="always" id="pJy-tj-GdG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hDl-Z3-lEh">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="aOB-64-Mkf" id="lPb-oo-Syi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="YGD-nZ-kGm" id="0Ev-LM-KCb"/>
                         <segue destination="Seb-08-8cZ" kind="show" identifier="pushToProjectDetails" id="2nw-n6-cfd"/>

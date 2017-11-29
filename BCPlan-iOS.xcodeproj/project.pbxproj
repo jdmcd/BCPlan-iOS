@@ -12,6 +12,8 @@
 		391B65001FCF55B300C7377B /* DetailedProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B64FF1FCF55B300C7377B /* DetailedProject.swift */; };
 		391B65031FCF59D900C7377B /* TableSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B65021FCF59D900C7377B /* TableSectionHeader.swift */; };
 		391B65051FCF59E800C7377B /* TableSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 391B65041FCF59E800C7377B /* TableSectionHeader.xib */; };
+		391B65091FCF656A00C7377B /* CreateProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B65081FCF656A00C7377B /* CreateProject.swift */; };
+		391B650B1FCF65F400C7377B /* CreateProjectObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B650A1FCF65F400C7377B /* CreateProjectObject.swift */; };
 		394FBFF31FCEEF7700AFB6A0 /* GetProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFF21FCEEF7700AFB6A0 /* GetProjects.swift */; };
 		394FBFF51FCEF01300AFB6A0 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFF41FCEF01300AFB6A0 /* Project.swift */; };
 		394FBFF81FCEF02700AFB6A0 /* ProjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFF71FCEF02700AFB6A0 /* ProjectResponse.swift */; };
@@ -47,6 +49,8 @@
 		391B64FF1FCF55B300C7377B /* DetailedProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProject.swift; sourceTree = "<group>"; };
 		391B65021FCF59D900C7377B /* TableSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeader.swift; sourceTree = "<group>"; };
 		391B65041FCF59E800C7377B /* TableSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableSectionHeader.xib; sourceTree = "<group>"; };
+		391B65081FCF656A00C7377B /* CreateProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProject.swift; sourceTree = "<group>"; };
+		391B650A1FCF65F400C7377B /* CreateProjectObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectObject.swift; sourceTree = "<group>"; };
 		394FBFF21FCEEF7700AFB6A0 /* GetProjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProjects.swift; sourceTree = "<group>"; };
 		394FBFF41FCEF01300AFB6A0 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		394FBFF71FCEF02700AFB6A0 /* ProjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectResponse.swift; sourceTree = "<group>"; };
@@ -199,6 +203,7 @@
 		39B74CDD1FCE52330037D263 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				391B650A1FCF65F400C7377B /* CreateProjectObject.swift */,
 				39B74CF11FCE71F30037D263 /* Register.swift */,
 				39B74CDE1FCE523F0037D263 /* Login.swift */,
 				39B74CE21FCE55760037D263 /* DefaultHeader.swift */,
@@ -210,6 +215,7 @@
 		39B74CE81FCE56DE0037D263 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				391B65081FCF656A00C7377B /* CreateProject.swift */,
 				391B64FB1FCF54BB00C7377B /* GetProject.swift */,
 				394FBFF21FCEEF7700AFB6A0 /* GetProjects.swift */,
 				39B74CE91FCE56E60037D263 /* LoginRequest.swift */,
@@ -381,6 +387,7 @@
 				39B74CC51FCE4E810037D263 /* LoginViewController.swift in Sources */,
 				39B74CF01FCE5C160037D263 /* Model.swift in Sources */,
 				39B74CF41FCE72350037D263 /* RegisterRequest.swift in Sources */,
+				391B650B1FCF65F400C7377B /* CreateProjectObject.swift in Sources */,
 				394FC0001FCF498F00AFB6A0 /* ProjectsViewController.swift in Sources */,
 				394FBFF31FCEEF7700AFB6A0 /* GetProjects.swift in Sources */,
 				39B74CF21FCE71F30037D263 /* Register.swift in Sources */,
@@ -389,6 +396,7 @@
 				391B64FA1FCF546800C7377B /* ProjectDetailsViewController.swift in Sources */,
 				39B74CD71FCE50AA0037D263 /* API.swift in Sources */,
 				394FBFFC1FCF155800AFB6A0 /* RegisterViewController.swift in Sources */,
+				391B65091FCF656A00C7377B /* CreateProject.swift in Sources */,
 				39B74CDF1FCE523F0037D263 /* Login.swift in Sources */,
 				39B74CC31FCE4E810037D263 /* AppDelegate.swift in Sources */,
 				39B74CE51FCE56970037D263 /* APIRepresentable.swift in Sources */,

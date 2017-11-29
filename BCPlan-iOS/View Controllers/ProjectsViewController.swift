@@ -52,10 +52,58 @@ class ProjectsViewController: UIViewController {
         }
     }
     
+    //MARK: - Actions
+    @IBAction private func addButtonTapped(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Create Project", message: "You will be the administrator of this project.", preferredStyle: .alert)
+        
+        var projectNameTextField = UITextField()
+        alertController.addTextField { textField in
+            projectNameTextField = textField
+            textField.placeholder = "Project Name"
+        }
+        
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
+        let okButton = UIAlertAction(title: "Create", style: .default) { action in
+            guard let projectName = projectNameTextField.text else { return }
+            self.createProject(projectName: projectName)
+        }
+        
+        alertController.addAction(cancelButton)
+        alertController.addAction(okButton)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
     //MARK: - Methods
+    private func createProject(projectName: String) {
+        let createProjectParams = CreateProjectObject(name: projectName)
+        
+        HUD.show(.progress)
+        let successHandler: ((Project?) -> Void) = { project in
+            HUD.hide()
+            
+            guard let project = project else { self.showError(); return }
+            self.projectResponse?.admin.insert(project, at: 0)
+            
+            self.tableView.reloadData()
+            
+            //we are inserting the row at the top, so it should always be at (0,0)
+            let indexPath = IndexPath(row: 0, section: 0)
+            guard let cell = self.tableView.cellForRow(at: indexPath) else { return }
+            self.animateCell(cell: cell, delay: 0)
+        }
+        
+        let errorHandler: ((ErrorResponse?) -> Void) = { error in
+            HUD.hide()
+            self.showError(errorResponse: error)
+        }
+        
+        CreateProject().request(parameters: createProjectParams, user: User.currentUser(), success: successHandler, error: errorHandler)
+    }
+    
     @objc private func getData() {
         HUD.show(.progress)
-        let successHandler: ((ProjectResponse?) -> Void) = { [unowned self] projectResponse in
+        let successHandler: ((ProjectResponse?) -> Void) = { projectResponse in
             HUD.hide()
             self.projectResponse = projectResponse
             self.tableView.reloadData()
@@ -71,14 +119,18 @@ class ProjectsViewController: UIViewController {
     }
     
     private func animateTable() {
-        let animation = AnimationType.from(direction: .left, offset: 30.0)
         for (index, view) in tableView.visibleCells.enumerated() {
             let delay = Double(index) * 0.05
-            if let animatable = view as? Animatable {
-                animatable.animateViews(animations: [animation], delay: delay)
-            } else {
-                view.animate(animations: [animation], delay: delay)
-            }
+            animateCell(cell: view, delay: delay)
+        }
+    }
+    
+    private func animateCell(cell: UITableViewCell, delay: Double) {
+        let animation = AnimationType.from(direction: .left, offset: 30.0)
+        if let animatable = cell as? Animatable {
+            animatable.animateViews(animations: [animation], delay: delay)
+        } else {
+            cell.animate(animations: [animation], delay: delay)
         }
     }
     
