@@ -12,6 +12,8 @@
 		39B74CC81FCE4E810037D263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B74CC61FCE4E810037D263 /* Main.storyboard */; };
 		39B74CCA1FCE4E810037D263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39B74CC91FCE4E810037D263 /* Assets.xcassets */; };
 		39B74CCD1FCE4E810037D263 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B74CCB1FCE4E810037D263 /* LaunchScreen.storyboard */; };
+		39B74CD51FCE505B0037D263 /* AlamofireHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CD41FCE505B0037D263 /* AlamofireHelper.swift */; };
+		39B74CD71FCE50AA0037D263 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CD61FCE50AA0037D263 /* API.swift */; };
 		5A56E977369C602C8B0F2BFB /* Pods_BCPlan_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7A94DFC478439CF1C7147F /* Pods_BCPlan_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +26,8 @@
 		39B74CC91FCE4E810037D263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39B74CCC1FCE4E810037D263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39B74CCE1FCE4E810037D263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39B74CD41FCE505B0037D263 /* AlamofireHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireHelper.swift; sourceTree = "<group>"; };
+		39B74CD61FCE50AA0037D263 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		6FDF4A454B1C74CB174620DC /* Pods-BCPlan-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCPlan-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCPlan-iOS/Pods-BCPlan-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ED7A94DFC478439CF1C7147F /* Pods_BCPlan_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCPlan_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -61,14 +65,48 @@
 		39B74CC11FCE4E810037D263 /* BCPlan-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				39B74CC21FCE4E810037D263 /* AppDelegate.swift */,
+				39B74CD81FCE50B00037D263 /* Helpers */,
+				39B74CDA1FCE50C80037D263 /* Misc */,
+				39B74CD91FCE50B60037D263 /* View Controllers */,
+				39B74CDB1FCE50CE0037D263 /* Storyboards */,
+			);
+			path = "BCPlan-iOS";
+			sourceTree = "<group>";
+		};
+		39B74CD81FCE50B00037D263 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				39B74CD41FCE505B0037D263 /* AlamofireHelper.swift */,
+				39B74CD61FCE50AA0037D263 /* API.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		39B74CD91FCE50B60037D263 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				39B74CC41FCE4E810037D263 /* ViewController.swift */,
-				39B74CC61FCE4E810037D263 /* Main.storyboard */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		39B74CDA1FCE50C80037D263 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				39B74CC21FCE4E810037D263 /* AppDelegate.swift */,
 				39B74CC91FCE4E810037D263 /* Assets.xcassets */,
 				39B74CCB1FCE4E810037D263 /* LaunchScreen.storyboard */,
 				39B74CCE1FCE4E810037D263 /* Info.plist */,
 			);
-			path = "BCPlan-iOS";
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		39B74CDB1FCE50CE0037D263 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				39B74CC61FCE4E810037D263 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		9EA6A0D6BE429E34806B52D9 /* Pods */ = {
@@ -218,6 +256,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				39B74CC51FCE4E810037D263 /* ViewController.swift in Sources */,
+				39B74CD51FCE505B0037D263 /* AlamofireHelper.swift in Sources */,
+				39B74CD71FCE50AA0037D263 /* API.swift in Sources */,
 				39B74CC31FCE4E810037D263 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
