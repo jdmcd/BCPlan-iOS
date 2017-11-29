@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class LoginViewController: UIViewController {
 
@@ -23,14 +24,19 @@ class LoginViewController: UIViewController {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         
+        HUD.show(.progress)
         let loginRequest = Login(email: email, password: password)
         let successHandler: ((User?) -> Void) = { [unowned self] user in
+            HUD.hide()
+            
             guard let user = user else { self.showError(); return }
             User.login(user: user)
             print(user)
         }
         
         let errorHandler: ((ErrorResponse?) -> Void) = { [unowned self] error in
+            HUD.hide()
+            
             self.showError(errorResponse: error)
         }
         
