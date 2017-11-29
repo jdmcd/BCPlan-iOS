@@ -21,10 +21,10 @@ class ViewController: UIViewController {
             print(error)
         }
         
-//        let loginRequest = Login(email: "email@email.com", password: "password")
-//        LoginRequest.request(parameters: loginRequest) { (user, error) in
-//            print(user)
-//            print(error)
-//        }
+        let loginRequest = Login(email: "email@email.com", password: "password")
+        LoginRequest.request(parameters: loginRequest) { (user, error) in
+            print(user)
+            print(error)
+        }
     }
 }

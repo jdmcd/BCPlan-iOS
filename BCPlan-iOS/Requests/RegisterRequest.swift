@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import SwiftyJSON
 
 struct RegisterRequest: APIRequestRepresentable {
     typealias CodableType = User
