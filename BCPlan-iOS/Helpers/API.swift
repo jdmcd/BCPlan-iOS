@@ -11,8 +11,8 @@ import Alamofire
 
 class API {
     static let apiKey = "test"
-//    static let baseUrl = "https://bcplan.herokuapp.com/api/v1/"
-    static let baseUrl = "http://0.0.0.0:8080/api/v1/"
+    static let baseUrl = "https://bcplan.herokuapp.com/api/v1/"
+//    static let baseUrl = "http://0.0.0.0:8080/api/v1/"
     
     enum Endpoint {
         case login

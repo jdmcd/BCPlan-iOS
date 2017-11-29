@@ -46,9 +46,20 @@ extension APIRequestRepresentable {
             encoding: JSONEncoding.default,
             headers: defaultHeader()).responseJSON { response in
                 //each response should have a status code and a json value
-                guard let statusCode = response.response?.statusCode else { return }
-                guard let jsonValue = response.result.value else { return }
-                guard let data = try? JSONSerialization.data(withJSONObject: jsonValue) else { return }
+                guard let statusCode = response.response?.statusCode else {
+                    completion(nil, ErrorResponse(reason: "Could not get status code"))
+                    return
+                }
+                
+                guard let jsonValue = response.result.value else {
+                    completion(nil, ErrorResponse(reason: "Could not get JSON value"))
+                    return
+                }
+                
+                guard let data = try? JSONSerialization.data(withJSONObject: jsonValue) else {
+                    completion(nil, ErrorResponse(reason: "Could not parse data"))
+                    return
+                }
                 
                 if 200...299 ~= statusCode {
                     //success
