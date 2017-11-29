@@ -17,10 +17,17 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     //MARK: - Actions
     @IBAction private func loginButtonTapped(_ sender: Any) {
+        login()
+    }
+    
+    //MARK: - Methods
+    private func login() {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         
@@ -41,5 +48,19 @@ class LoginViewController: UIViewController {
         }
         
         LoginRequest.request(parameters: loginRequest, success: successHandler, error: errorHandler)
+    }
+}
+
+//MARK: - UITextFieldDelegate
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            passwordTextField.resignFirstResponder()
+            login()
+        }
+        
+        return true
     }
 }
