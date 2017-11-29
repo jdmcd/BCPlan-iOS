@@ -10,8 +10,9 @@ import Foundation
 import Alamofire
 
 class API {
-    static let apiKey = ""
-    static let baseUrl = "https://bcplan.herokuapp.com/api/v1/"
+    static let apiKey = "test"
+//    static let baseUrl = "https://bcplan.herokuapp.com/api/v1/"
+    static let baseUrl = "http://0.0.0.0:8080/api/v1/"
     
     enum Endpoint {
         case login
@@ -23,15 +24,15 @@ class API {
         var endpoint: String {
             switch self {
             case .login:
-                return "\(API.baseUrl)/login"
+                return "login"
             case .register:
-                return "\(API.baseUrl)/register"
+                return "register"
             case .projects:
-                return "\(API.baseUrl)/projects"
+                return "projects"
             case .createProject:
-                return "\(API.baseUrl)/project"
+                return "project"
             case .project(let id):
-                return "\(API.baseUrl)/project/\(id)"
+                return "project/\(id)"
             }
         }
     }

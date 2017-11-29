@@ -7,23 +7,24 @@
 //
 
 import Foundation
+import Alamofire
 
 extension Encodable {
-    func asDictionary() -> [String: Any]? {
+    func asDictionary() -> Parameters {
         do {
             let data = try JSONEncoder().encode(self)
-            return try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
+            return try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] ?? [:]
         } catch {
-            return nil
+            return [:]
         }
     }
     
-    func asStringValueDictionary() -> [String: String]? {
+    func asStringValueDictionary() -> HTTPHeaders {
         do {
             let data = try JSONEncoder().encode(self)
-            return try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: String]
+            return try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: String] ?? [:]
         } catch {
-            return nil
+            return [:]
         }
     }
 }

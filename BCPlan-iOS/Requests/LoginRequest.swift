@@ -8,12 +8,28 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
-struct LoginRequest: APIRepresentable {
-    var method: Alamofire.HTTPMethod = .post
-    var endpoint: API.Endpoint = .login
+struct LoginRequest: APIRequestRepresentable {
+    typealias CodableType = User
     
-    func request() {
-        
+    static var method: Alamofire.HTTPMethod = .post
+    static var endpoint: API.Endpoint = .login
+    
+    static func request(parameters: Codable?, completion: @escaping (_ object: User?, _ error: Error?) -> Void) {
+        AlamoHelper.manager.request(
+            url(),
+            method: method,
+            parameters: parameters?.asDictionary(),
+            encoding: JSONEncoding.default,
+            headers: defaultHeader()).validate().responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    guard let data = try? JSONSerialization.data(withJSONObject: value) else { return }
+                    completion(User.from(data: data), nil)
+                case .failure(let error):
+                    completion(nil, error)
+                }
+        }
     }
 }

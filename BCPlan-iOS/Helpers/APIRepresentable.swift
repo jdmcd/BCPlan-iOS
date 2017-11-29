@@ -9,30 +9,32 @@
 import Foundation
 import Alamofire
 
-protocol APIRepresentable {
-    var method: Alamofire.HTTPMethod { get set }
-    var endpoint: API.Endpoint { get set }
-    func request()
-    func defaultHeaderObject() -> DefaultHeader
-    func defaultHeader() -> [String: String]?
-    func tokenHeader(token: String) -> [String: String]?
-    func url() -> String
+protocol APIRequestRepresentable {
+    associatedtype CodableType: Codable
+    
+    static var method: Alamofire.HTTPMethod { get set }
+    static var endpoint: API.Endpoint { get set }
+    static func request(parameters: Codable?, completion: @escaping (_ object: CodableType?, _ error: Error?) -> Void)
+    static func defaultHeaderObject() -> DefaultHeader
+    static func defaultHeader() -> HTTPHeaders
+    static func tokenHeader(token: String) -> HTTPHeaders
+    static func url() -> String
 }
 
-extension APIRepresentable {
-    func defaultHeaderObject() -> DefaultHeader {
+extension APIRequestRepresentable {
+    static func defaultHeaderObject() -> DefaultHeader {
         return DefaultHeader(contentType: "application/json; charset=utf-8", apiKey: API.apiKey)
     }
     
-    func defaultHeader() -> [String: String]? {
+    static func defaultHeader() -> HTTPHeaders {
         return defaultHeaderObject().asStringValueDictionary()
     }
     
-    func tokenHeader(token: String) -> [String: String]? {
+    static func tokenHeader(token: String) -> HTTPHeaders {
         return TokenHeader(defaultHeader: defaultHeaderObject(), token: "Bearer \(token)").asStringValueDictionary()
     }
     
-    func url() -> String {
+    static func url() -> String {
         return API.createUrl(endpoint: endpoint)
     }
 }
