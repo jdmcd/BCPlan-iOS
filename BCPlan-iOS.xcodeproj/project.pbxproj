@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		394FBFF31FCEEF7700AFB6A0 /* GetProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFF21FCEEF7700AFB6A0 /* GetProjects.swift */; };
+		394FBFF51FCEF01300AFB6A0 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFF41FCEF01300AFB6A0 /* Project.swift */; };
+		394FBFF81FCEF02700AFB6A0 /* ProjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFF71FCEF02700AFB6A0 /* ProjectResponse.swift */; };
+		394FBFFA1FCF0E6F00AFB6A0 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFF91FCF0E6F00AFB6A0 /* UIViewController+Alert.swift */; };
 		39B74CC31FCE4E810037D263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CC21FCE4E810037D263 /* AppDelegate.swift */; };
 		39B74CC51FCE4E810037D263 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CC41FCE4E810037D263 /* ViewController.swift */; };
 		39B74CC81FCE4E810037D263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B74CC61FCE4E810037D263 /* Main.storyboard */; };
@@ -30,6 +34,10 @@
 
 /* Begin PBXFileReference section */
 		248D276D9B3C8FD491EC4B6E /* Pods-BCPlan-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCPlan-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BCPlan-iOS/Pods-BCPlan-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		394FBFF21FCEEF7700AFB6A0 /* GetProjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProjects.swift; sourceTree = "<group>"; };
+		394FBFF41FCEF01300AFB6A0 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		394FBFF71FCEF02700AFB6A0 /* ProjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectResponse.swift; sourceTree = "<group>"; };
+		394FBFF91FCF0E6F00AFB6A0 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 		39B74CBF1FCE4E810037D263 /* BCPlan-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BCPlan-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B74CC21FCE4E810037D263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39B74CC41FCE4E810037D263 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		394FBFF61FCEF01800AFB6A0 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				394FBFF71FCEF02700AFB6A0 /* ProjectResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
 		39B74CB61FCE4E810037D263 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +116,7 @@
 		39B74CD81FCE50B00037D263 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				394FBFF91FCF0E6F00AFB6A0 /* UIViewController+Alert.swift */,
 				39B74CEF1FCE5C160037D263 /* Model.swift */,
 				39B74CE41FCE56970037D263 /* APIRepresentable.swift */,
 				39B74CD41FCE505B0037D263 /* AlamofireHelper.swift */,
@@ -139,6 +156,8 @@
 		39B74CDC1FCE522B0037D263 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				394FBFF61FCEF01800AFB6A0 /* Responses */,
+				394FBFF41FCEF01300AFB6A0 /* Project.swift */,
 				39B74CF51FCE78330037D263 /* ErrorResponse.swift */,
 				39B74CED1FCE5BA10037D263 /* User.swift */,
 				39B74CDD1FCE52330037D263 /* Requests */,
@@ -160,6 +179,7 @@
 		39B74CE81FCE56DE0037D263 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				394FBFF21FCEEF7700AFB6A0 /* GetProjects.swift */,
 				39B74CE91FCE56E60037D263 /* LoginRequest.swift */,
 				39B74CF31FCE72350037D263 /* RegisterRequest.swift */,
 			);
@@ -318,13 +338,17 @@
 				39B74CC51FCE4E810037D263 /* ViewController.swift in Sources */,
 				39B74CF01FCE5C160037D263 /* Model.swift in Sources */,
 				39B74CF41FCE72350037D263 /* RegisterRequest.swift in Sources */,
+				394FBFF31FCEEF7700AFB6A0 /* GetProjects.swift in Sources */,
 				39B74CF21FCE71F30037D263 /* Register.swift in Sources */,
+				394FBFF81FCEF02700AFB6A0 /* ProjectResponse.swift in Sources */,
 				39B74CD51FCE505B0037D263 /* AlamofireHelper.swift in Sources */,
 				39B74CD71FCE50AA0037D263 /* API.swift in Sources */,
 				39B74CDF1FCE523F0037D263 /* Login.swift in Sources */,
 				39B74CC31FCE4E810037D263 /* AppDelegate.swift in Sources */,
 				39B74CE51FCE56970037D263 /* APIRepresentable.swift in Sources */,
 				39B74CEC1FCE57640037D263 /* TokenHeader.swift in Sources */,
+				394FBFF51FCEF01300AFB6A0 /* Project.swift in Sources */,
+				394FBFFA1FCF0E6F00AFB6A0 /* UIViewController+Alert.swift in Sources */,
 				39B74CE71FCE56CE0037D263 /* Encodable+Alamofire.swift in Sources */,
 				39B74CEE1FCE5BA10037D263 /* User.swift in Sources */,
 			);
