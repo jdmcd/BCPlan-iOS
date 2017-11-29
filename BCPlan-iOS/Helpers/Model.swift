@@ -12,6 +12,8 @@ protocol APIModel {
     var id: Int { get set }
 }
 
+typealias APIModelCodable = APIModel & Codable
+
 extension APIModel where Self: Codable {
     static func from(json: String, using encoding: String.Encoding = .utf8) -> Self? {
         guard let data = json.data(using: encoding) else { return nil }

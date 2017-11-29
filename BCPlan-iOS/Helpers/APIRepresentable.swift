@@ -10,11 +10,11 @@ import Foundation
 import Alamofire
 
 protocol APIRequestRepresentable {
-    associatedtype CodableType: Codable
+    associatedtype CodableType: APIModelCodable
     
     static var method: Alamofire.HTTPMethod { get set }
     static var endpoint: API.Endpoint { get set }
-    static func request(parameters: Codable?, completion: @escaping (_ object: CodableType?, _ error: Error?) -> Void)
+    static func request(parameters: Codable?, completion: @escaping (_ object: CodableType?, _ error: ErrorResponse?) -> Void)
     static func defaultHeaderObject() -> DefaultHeader
     static func defaultHeader() -> HTTPHeaders
     static func tokenHeader(token: String) -> HTTPHeaders
@@ -36,5 +36,27 @@ extension APIRequestRepresentable {
     
     static func url() -> String {
         return API.createUrl(endpoint: endpoint)
+    }
+    
+    static func request(parameters: Codable?, completion: @escaping (_ object: CodableType?, _ error: ErrorResponse?) -> Void) {
+        AlamoHelper.manager.request(
+            url(),
+            method: method,
+            parameters: parameters?.asDictionary(),
+            encoding: JSONEncoding.default,
+            headers: defaultHeader()).responseJSON { response in
+                //each response should have a status code and a json value
+                guard let statusCode = response.response?.statusCode else { return }
+                guard let jsonValue = response.result.value else { return }
+                guard let data = try? JSONSerialization.data(withJSONObject: jsonValue) else { return }
+                
+                if 200...299 ~= statusCode {
+                    //success
+                    completion(CodableType.from(data: data), nil)
+                } else {
+                    //error - we need a JSONDecoder here because `ErrorResponse` does not conform to APIModel
+                    completion(nil, try? JSONDecoder().decode(ErrorResponse.self, from: data))
+                }
+        }
     }
 }

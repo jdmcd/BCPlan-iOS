@@ -1,5 +1,5 @@
 //
-//  LoginRequest.swift
+//  RegisterRequest.swift
 //  BCPlan-iOS
 //
 //  Created by Jimmy McDermott on 11/28/17.
@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-struct LoginRequest: APIRequestRepresentable {
+struct RegisterRequest: APIRequestRepresentable {
     typealias CodableType = User
     static var method: Alamofire.HTTPMethod = .post
-    static var endpoint: API.Endpoint = .login
+    static var endpoint: API.Endpoint = .register
 }

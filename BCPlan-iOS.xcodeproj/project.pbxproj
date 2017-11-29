@@ -22,6 +22,9 @@
 		39B74CEC1FCE57640037D263 /* TokenHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CEB1FCE57640037D263 /* TokenHeader.swift */; };
 		39B74CEE1FCE5BA10037D263 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CED1FCE5BA10037D263 /* User.swift */; };
 		39B74CF01FCE5C160037D263 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CEF1FCE5C160037D263 /* Model.swift */; };
+		39B74CF21FCE71F30037D263 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CF11FCE71F30037D263 /* Register.swift */; };
+		39B74CF41FCE72350037D263 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CF31FCE72350037D263 /* RegisterRequest.swift */; };
+		39B74CF61FCE78330037D263 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CF51FCE78330037D263 /* ErrorResponse.swift */; };
 		5A56E977369C602C8B0F2BFB /* Pods_BCPlan_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7A94DFC478439CF1C7147F /* Pods_BCPlan_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +47,9 @@
 		39B74CEB1FCE57640037D263 /* TokenHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenHeader.swift; sourceTree = "<group>"; };
 		39B74CED1FCE5BA10037D263 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		39B74CEF1FCE5C160037D263 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		39B74CF11FCE71F30037D263 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		39B74CF31FCE72350037D263 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		39B74CF51FCE78330037D263 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		6FDF4A454B1C74CB174620DC /* Pods-BCPlan-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCPlan-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BCPlan-iOS/Pods-BCPlan-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ED7A94DFC478439CF1C7147F /* Pods_BCPlan_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BCPlan_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -133,6 +139,7 @@
 		39B74CDC1FCE522B0037D263 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				39B74CF51FCE78330037D263 /* ErrorResponse.swift */,
 				39B74CED1FCE5BA10037D263 /* User.swift */,
 				39B74CDD1FCE52330037D263 /* Requests */,
 			);
@@ -142,6 +149,7 @@
 		39B74CDD1FCE52330037D263 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				39B74CF11FCE71F30037D263 /* Register.swift */,
 				39B74CDE1FCE523F0037D263 /* Login.swift */,
 				39B74CE21FCE55760037D263 /* DefaultHeader.swift */,
 				39B74CEB1FCE57640037D263 /* TokenHeader.swift */,
@@ -153,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				39B74CE91FCE56E60037D263 /* LoginRequest.swift */,
+				39B74CF31FCE72350037D263 /* RegisterRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -305,10 +314,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39B74CF61FCE78330037D263 /* ErrorResponse.swift in Sources */,
 				39B74CEA1FCE56E60037D263 /* LoginRequest.swift in Sources */,
 				39B74CE31FCE55760037D263 /* DefaultHeader.swift in Sources */,
 				39B74CC51FCE4E810037D263 /* ViewController.swift in Sources */,
 				39B74CF01FCE5C160037D263 /* Model.swift in Sources */,
+				39B74CF41FCE72350037D263 /* RegisterRequest.swift in Sources */,
+				39B74CF21FCE71F30037D263 /* Register.swift in Sources */,
 				39B74CD51FCE505B0037D263 /* AlamofireHelper.swift in Sources */,
 				39B74CD71FCE50AA0037D263 /* API.swift in Sources */,
 				39B74CDF1FCE523F0037D263 /* Login.swift in Sources */,

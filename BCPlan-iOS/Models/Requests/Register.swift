@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Register.swift
 //  BCPlan-iOS
 //
 //  Created by Jimmy McDermott on 11/28/17.
@@ -8,10 +8,8 @@
 
 import Foundation
 
-struct User: APIModelCodable {
-    var id: Int
+struct Register: Codable {
     var name: String
     var email: String
-    var admin: Bool
-    var token: String
+    var password: String
 }

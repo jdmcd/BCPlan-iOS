@@ -15,7 +15,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonTapped(_ sender: Any) {
+        let registerRequest = Register(name: "New Name", email: "email2@email.com", password: "password")
+        RegisterRequest.request(parameters: registerRequest) { user, error in
+            print(user)
+            print(error)
+        }
         
+//        let loginRequest = Login(email: "email@email.com", password: "password")
+//        LoginRequest.request(parameters: loginRequest) { (user, error) in
+//            print(user)
+//            print(error)
+//        }
     }
 }
-
