@@ -12,4 +12,10 @@ class DetailedProject: Codable, APIModel {
     var id: Int
     var name: String
     var user_id: Int
+    var members: [Member]
+    
+    struct Member: Codable {
+        var id: Int
+        var name: String
+    }
 }

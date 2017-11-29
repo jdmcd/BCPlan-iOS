@@ -14,6 +14,8 @@
 		391B65051FCF59E800C7377B /* TableSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 391B65041FCF59E800C7377B /* TableSectionHeader.xib */; };
 		391B65091FCF656A00C7377B /* CreateProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B65081FCF656A00C7377B /* CreateProject.swift */; };
 		391B650B1FCF65F400C7377B /* CreateProjectObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B650A1FCF65F400C7377B /* CreateProjectObject.swift */; };
+		391B65111FCF6DEB00C7377B /* CircleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 391B65101FCF6DEB00C7377B /* CircleCollectionViewCell.xib */; };
+		391B65131FCF6E7900C7377B /* CircleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B65121FCF6E7900C7377B /* CircleCollectionViewCell.swift */; };
 		394FBFF31FCEEF7700AFB6A0 /* GetProjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFF21FCEEF7700AFB6A0 /* GetProjects.swift */; };
 		394FBFF51FCEF01300AFB6A0 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFF41FCEF01300AFB6A0 /* Project.swift */; };
 		394FBFF81FCEF02700AFB6A0 /* ProjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFF71FCEF02700AFB6A0 /* ProjectResponse.swift */; };
@@ -51,6 +53,8 @@
 		391B65041FCF59E800C7377B /* TableSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableSectionHeader.xib; sourceTree = "<group>"; };
 		391B65081FCF656A00C7377B /* CreateProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProject.swift; sourceTree = "<group>"; };
 		391B650A1FCF65F400C7377B /* CreateProjectObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectObject.swift; sourceTree = "<group>"; };
+		391B65101FCF6DEB00C7377B /* CircleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CircleCollectionViewCell.xib; sourceTree = "<group>"; };
+		391B65121FCF6E7900C7377B /* CircleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCollectionViewCell.swift; sourceTree = "<group>"; };
 		394FBFF21FCEEF7700AFB6A0 /* GetProjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProjects.swift; sourceTree = "<group>"; };
 		394FBFF41FCEF01300AFB6A0 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		394FBFF71FCEF02700AFB6A0 /* ProjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectResponse.swift; sourceTree = "<group>"; };
@@ -97,8 +101,10 @@
 		391B65011FCF59B300C7377B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				391B65121FCF6E7900C7377B /* CircleCollectionViewCell.swift */,
 				391B65021FCF59D900C7377B /* TableSectionHeader.swift */,
 				391B65041FCF59E800C7377B /* TableSectionHeader.xib */,
+				391B65101FCF6DEB00C7377B /* CircleCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				391B65111FCF6DEB00C7377B /* CircleCollectionViewCell.xib in Resources */,
 				39B74CCD1FCE4E810037D263 /* LaunchScreen.storyboard in Resources */,
 				391B65051FCF59E800C7377B /* TableSectionHeader.xib in Resources */,
 				39B74CCA1FCE4E810037D263 /* Assets.xcassets in Resources */,
@@ -388,6 +395,7 @@
 				39B74CF01FCE5C160037D263 /* Model.swift in Sources */,
 				39B74CF41FCE72350037D263 /* RegisterRequest.swift in Sources */,
 				391B650B1FCF65F400C7377B /* CreateProjectObject.swift in Sources */,
+				391B65131FCF6E7900C7377B /* CircleCollectionViewCell.swift in Sources */,
 				394FC0001FCF498F00AFB6A0 /* ProjectsViewController.swift in Sources */,
 				394FBFF31FCEEF7700AFB6A0 /* GetProjects.swift in Sources */,
 				39B74CF21FCE71F30037D263 /* Register.swift in Sources */,

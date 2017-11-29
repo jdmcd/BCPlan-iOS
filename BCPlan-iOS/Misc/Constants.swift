@@ -13,4 +13,5 @@ struct Constants {
     static let projectsCell = "projectsCell"
     static let pushToProjectDetails = "pushToProjectDetails"
     static let logInRegister = "logInRegister"
+    static let circleCollectionId = "CircleCollection"
 }

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -69,13 +70,60 @@
                     <view key="view" contentMode="scaleToFill" id="wLm-pl-hdY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtM-rz-C3j">
+                                <rect key="frame" x="16" y="98" width="343" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="E7h-kI-Wva"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="biq-Bf-pel">
+                                <rect key="frame" x="0.0" y="148" width="375" height="164"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="Nop-C6-Jlm">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lws-rU-Bgu">
+                                        <rect key="frame" x="0.0" y="7" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Seb-08-8cZ" id="lzB-em-Rzd"/>
+                                    <outlet property="delegate" destination="Seb-08-8cZ" id="OzH-yc-A2d"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="biq-Bf-pel" firstAttribute="top" secondItem="KtM-rz-C3j" secondAttribute="bottom" constant="8" symbolic="YES" id="JNy-no-dJp"/>
+                            <constraint firstItem="KtM-rz-C3j" firstAttribute="trailing" secondItem="wLm-pl-hdY" secondAttribute="trailingMargin" id="Uw8-nD-Bum"/>
+                            <constraint firstItem="FJb-2Y-2oU" firstAttribute="bottom" secondItem="biq-Bf-pel" secondAttribute="bottom" constant="466" id="YDp-WA-kJz"/>
+                            <constraint firstItem="KtM-rz-C3j" firstAttribute="trailing" secondItem="biq-Bf-pel" secondAttribute="trailing" constant="-16" id="aZM-Mm-9cD"/>
+                            <constraint firstItem="KtM-rz-C3j" firstAttribute="top" secondItem="FJb-2Y-2oU" secondAttribute="top" constant="10" id="rz3-SW-zwM"/>
+                            <constraint firstItem="KtM-rz-C3j" firstAttribute="leading" secondItem="wLm-pl-hdY" secondAttribute="leadingMargin" id="tug-Fh-fax"/>
+                            <constraint firstItem="KtM-rz-C3j" firstAttribute="leading" secondItem="biq-Bf-pel" secondAttribute="leading" constant="16" id="vBU-Yr-9Xz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FJb-2Y-2oU"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="biq-Bf-pel" id="RMs-xV-Uga"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3kq-6T-7ZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1860" y="-637"/>
+            <point key="canvasLocation" x="1860" y="-637.6847290640394"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
