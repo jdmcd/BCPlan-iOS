@@ -17,5 +17,6 @@ class DetailedProject: Codable, APIModel {
     struct Member: Codable {
         var id: Int
         var name: String
+        var accepted: Bool
     }
 }

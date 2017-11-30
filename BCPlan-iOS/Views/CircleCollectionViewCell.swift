@@ -12,6 +12,7 @@ class CircleCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var letterLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var acceptedLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,5 +25,11 @@ class CircleCollectionViewCell: UICollectionViewCell {
         guard let firstLetter = member.name.first else { return }
         letterLabel.text = String(describing: firstLetter).uppercased()
         nameLabel.text = member.name
+        
+        if member.accepted {
+            acceptedLabel.isHidden = true
+        } else {
+            acceptedLabel.isHidden = false
+        }
     }
 }

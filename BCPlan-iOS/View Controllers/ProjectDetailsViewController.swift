@@ -8,10 +8,11 @@
 
 import UIKit
 import PKHUD
+import DZNEmptyDataSet
 
 class ProjectDetailsViewController: UIViewController {
     
-    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var projectMemberCollectionView: UICollectionView!
     
     var project: Project!
     private var detailedProject: DetailedProject?
@@ -20,7 +21,8 @@ class ProjectDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         let nib = UINib(nibName: "CircleCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: Constants.circleCollectionId)
+        projectMemberCollectionView.register(nib, forCellWithReuseIdentifier: Constants.circleCollectionId)
+        projectMemberCollectionView.emptyDataSetSource = self
         
         title = project.name
     }
@@ -32,7 +34,7 @@ class ProjectDetailsViewController: UIViewController {
         let successHandler: ((DetailedProject?) -> Void) = { detailedProject in
             HUD.hide()
             self.detailedProject = detailedProject
-            self.collectionView.reloadData()
+            self.projectMemberCollectionView.reloadData()
         }
         
         let errorHandler: ((ErrorResponse?) -> Void) = { error in
@@ -57,5 +59,20 @@ extension ProjectDetailsViewController: UICollectionViewDataSource {
         cell.configure(member: detailedProject.members[indexPath.row])
         
         return cell
+    }
+}
+
+extension ProjectDetailsViewController: DZNEmptyDataSetSource {
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "No members added yet"
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .left
+        
+        return NSAttributedString(string: text, attributes: [
+            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 18),
+            NSAttributedStringKey.foregroundColor: UIColor.darkGray,
+            NSAttributedStringKey.paragraphStyle: paragraphStyle
+            ])
     }
 }
