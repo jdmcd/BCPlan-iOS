@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390299B11FCFA5BB00ABC48E /* SuggestedTimeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390299AF1FCFA5BB00ABC48E /* SuggestedTimeCollectionViewCell.swift */; };
+		390299B21FCFA5BB00ABC48E /* SuggestedTimeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 390299B01FCFA5BB00ABC48E /* SuggestedTimeCollectionViewCell.xib */; };
+		39029F091FD103B200ABC48E /* AddUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39029F081FD103B200ABC48E /* AddUserViewController.swift */; };
+		39029F0B1FD1077F00ABC48E /* SearchUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39029F0A1FD1077F00ABC48E /* SearchUsers.swift */; };
+		39029F0D1FD10F6500ABC48E /* InviteUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39029F0C1FD10F6500ABC48E /* InviteUser.swift */; };
+		39029F0F1FD1106A00ABC48E /* EmptyResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39029F0E1FD1106A00ABC48E /* EmptyResponseType.swift */; };
 		391B64FA1FCF546800C7377B /* ProjectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B64F91FCF546800C7377B /* ProjectDetailsViewController.swift */; };
 		391B64FC1FCF54BB00C7377B /* GetProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B64FB1FCF54BB00C7377B /* GetProject.swift */; };
 		391B65001FCF55B300C7377B /* DetailedProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B64FF1FCF55B300C7377B /* DetailedProject.swift */; };
@@ -46,6 +52,12 @@
 
 /* Begin PBXFileReference section */
 		248D276D9B3C8FD491EC4B6E /* Pods-BCPlan-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BCPlan-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-BCPlan-iOS/Pods-BCPlan-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		390299AF1FCFA5BB00ABC48E /* SuggestedTimeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedTimeCollectionViewCell.swift; sourceTree = "<group>"; };
+		390299B01FCFA5BB00ABC48E /* SuggestedTimeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggestedTimeCollectionViewCell.xib; sourceTree = "<group>"; };
+		39029F081FD103B200ABC48E /* AddUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserViewController.swift; sourceTree = "<group>"; };
+		39029F0A1FD1077F00ABC48E /* SearchUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsers.swift; sourceTree = "<group>"; };
+		39029F0C1FD10F6500ABC48E /* InviteUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteUser.swift; sourceTree = "<group>"; };
+		39029F0E1FD1106A00ABC48E /* EmptyResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponseType.swift; sourceTree = "<group>"; };
 		391B64F91FCF546800C7377B /* ProjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsViewController.swift; sourceTree = "<group>"; };
 		391B64FB1FCF54BB00C7377B /* GetProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProject.swift; sourceTree = "<group>"; };
 		391B64FF1FCF55B300C7377B /* DetailedProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProject.swift; sourceTree = "<group>"; };
@@ -101,6 +113,8 @@
 		391B65011FCF59B300C7377B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				390299AF1FCFA5BB00ABC48E /* SuggestedTimeCollectionViewCell.swift */,
+				390299B01FCFA5BB00ABC48E /* SuggestedTimeCollectionViewCell.xib */,
 				391B65121FCF6E7900C7377B /* CircleCollectionViewCell.swift */,
 				391B65021FCF59D900C7377B /* TableSectionHeader.swift */,
 				391B65041FCF59E800C7377B /* TableSectionHeader.xib */,
@@ -112,6 +126,7 @@
 		394FBFF61FCEF01800AFB6A0 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				39029F0E1FD1106A00ABC48E /* EmptyResponseType.swift */,
 				394FBFF71FCEF02700AFB6A0 /* ProjectResponse.swift */,
 			);
 			path = Responses;
@@ -165,6 +180,7 @@
 		39B74CD91FCE50B60037D263 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				39029F081FD103B200ABC48E /* AddUserViewController.swift */,
 				391B64F91FCF546800C7377B /* ProjectDetailsViewController.swift */,
 				394FBFFF1FCF498F00AFB6A0 /* ProjectsViewController.swift */,
 				394FBFFB1FCF155800AFB6A0 /* RegisterViewController.swift */,
@@ -221,6 +237,8 @@
 		39B74CE81FCE56DE0037D263 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				39029F0C1FD10F6500ABC48E /* InviteUser.swift */,
+				39029F0A1FD1077F00ABC48E /* SearchUsers.swift */,
 				391B65081FCF656A00C7377B /* CreateProject.swift */,
 				391B64FB1FCF54BB00C7377B /* GetProject.swift */,
 				394FBFF21FCEEF7700AFB6A0 /* GetProjects.swift */,
@@ -310,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				391B65111FCF6DEB00C7377B /* CircleCollectionViewCell.xib in Resources */,
+				390299B21FCFA5BB00ABC48E /* SuggestedTimeCollectionViewCell.xib in Resources */,
 				39B74CCD1FCE4E810037D263 /* LaunchScreen.storyboard in Resources */,
 				391B65051FCF59E800C7377B /* TableSectionHeader.xib in Resources */,
 				39B74CCA1FCE4E810037D263 /* Assets.xcassets in Resources */,
@@ -401,15 +420,20 @@
 				39B74CF21FCE71F30037D263 /* Register.swift in Sources */,
 				394FBFF81FCEF02700AFB6A0 /* ProjectResponse.swift in Sources */,
 				39B74CD51FCE505B0037D263 /* AlamofireHelper.swift in Sources */,
+				390299B11FCFA5BB00ABC48E /* SuggestedTimeCollectionViewCell.swift in Sources */,
 				391B64FA1FCF546800C7377B /* ProjectDetailsViewController.swift in Sources */,
 				39B74CD71FCE50AA0037D263 /* API.swift in Sources */,
+				39029F0B1FD1077F00ABC48E /* SearchUsers.swift in Sources */,
+				39029F091FD103B200ABC48E /* AddUserViewController.swift in Sources */,
 				394FBFFC1FCF155800AFB6A0 /* RegisterViewController.swift in Sources */,
 				391B65091FCF656A00C7377B /* CreateProject.swift in Sources */,
 				39B74CDF1FCE523F0037D263 /* Login.swift in Sources */,
 				39B74CC31FCE4E810037D263 /* AppDelegate.swift in Sources */,
 				39B74CE51FCE56970037D263 /* APIRepresentable.swift in Sources */,
 				39B74CEC1FCE57640037D263 /* TokenHeader.swift in Sources */,
+				39029F0D1FD10F6500ABC48E /* InviteUser.swift in Sources */,
 				394FBFF51FCEF01300AFB6A0 /* Project.swift in Sources */,
+				39029F0F1FD1106A00ABC48E /* EmptyResponseType.swift in Sources */,
 				394FBFFA1FCF0E6F00AFB6A0 /* UIViewController+Alert.swift in Sources */,
 				39B74CE71FCE56CE0037D263 /* Encodable+Alamofire.swift in Sources */,
 				39B74CEE1FCE5BA10037D263 /* User.swift in Sources */,

@@ -32,4 +32,11 @@ class CircleCollectionViewCell: UICollectionViewCell {
             acceptedLabel.isHidden = false
         }
     }
+    
+    func configurePlus() {
+        nameLabel.isHidden = false
+        acceptedLabel.isHidden = true
+        nameLabel.text = "Add Member"
+        letterLabel.text = "+"
+    }
 }

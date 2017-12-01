@@ -20,6 +20,8 @@ class API {
         case projects
         case createProject
         case project(projectId: Int)
+        case searchUser(projectId: Int, query: String)
+        case inviteUser(projectId: Int, userId: Int)
         
         var endpoint: String {
             switch self {
@@ -33,6 +35,10 @@ class API {
                 return "project"
             case .project(let id):
                 return "project/\(id)"
+            case .searchUser(let id, let query):
+                return "project/\(id)/user?query=\(query)"
+            case .inviteUser(let projectId, let userId):
+                return "project/\(projectId)/invite/\(userId)"
             }
         }
     }
