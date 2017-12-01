@@ -40,6 +40,7 @@ class ProjectDetailsViewController: UIViewController {
             HUD.hide()
             self.detailedProject = detailedProject
             self.projectMemberCollectionView.reloadData()
+            self.suggestedTimesCollectionView.reloadData()
         }
         
         let errorHandler: ((ErrorResponse?) -> Void) = { error in
@@ -71,7 +72,8 @@ extension ProjectDetailsViewController: UICollectionViewDataSource, UICollection
             guard let membersCount = detailedProject?.members.count else { return 0 }
             return membersCount + 1
         } else {
-            return 4
+            guard let datesCount = detailedProject?.dates.count else { return 0 }
+            return datesCount
         }
     }
     
@@ -89,6 +91,8 @@ extension ProjectDetailsViewController: UICollectionViewDataSource, UICollection
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.suggestedTime, for: indexPath) as! SuggestedTimeCollectionViewCell
+            guard let detailedProject = detailedProject else { return cell }
+            cell.configure(date: detailedProject.dates[indexPath.row])
             return cell
         }
     }

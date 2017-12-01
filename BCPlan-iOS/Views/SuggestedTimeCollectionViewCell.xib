@@ -48,6 +48,10 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="170" height="70"/>
+            <connections>
+                <outlet property="dateLabel" destination="THp-FO-fcx" id="wV0-zZ-HL6"/>
+                <outlet property="timeLabel" destination="24g-Vt-7IY" id="FoI-CY-Qil"/>
+            </connections>
             <point key="canvasLocation" x="94" y="64"/>
         </collectionViewCell>
     </objects>

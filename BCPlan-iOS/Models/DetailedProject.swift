@@ -13,10 +13,16 @@ class DetailedProject: Codable, APIModel {
     var name: String
     var user_id: Int
     var members: [Member]
+    var dates: [MeetingDate]
     
     struct Member: Codable {
         var id: Int
         var name: String
         var accepted: Bool
+    }
+    
+    struct MeetingDate: Codable {
+        var id: Int
+        var date: Date
     }
 }
