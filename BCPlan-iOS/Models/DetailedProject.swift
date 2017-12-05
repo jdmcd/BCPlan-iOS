@@ -16,6 +16,7 @@ class DetailedProject: Codable, APIModel {
     var members: [Member]
     var dates: [MeetingDate]
     var attendingUsers: [User]
+    var votedFor: Int?
     
     struct Member: Codable {
         var id: Int

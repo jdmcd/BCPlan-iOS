@@ -34,6 +34,9 @@ class SuggestedTimeCollectionViewCell: UICollectionViewCell {
     }
 
     func configure(date: DetailedProject.MeetingDate) {
+        layer.borderWidth = 0
+        layer.borderColor = nil
+        
         if date.selected {
             backgroundColor = greenColor
         } else {
@@ -50,7 +53,25 @@ class SuggestedTimeCollectionViewCell: UICollectionViewCell {
         timeLabel.text = "\(timeFormatter.string(from: date.date)) (\(date.votes) \(vote))"
     }
     
+    func configureForVote(date: DetailedProject.MeetingDate) {
+        layer.borderWidth = 4
+        layer.borderColor = greenColor.cgColor
+        backgroundColor = redColor
+        
+        dateLabel.text = dateFormatter.string(from: date.date)
+        
+        var vote = "vote"
+        if date.votes != 1 {
+            vote = "votes"
+        }
+        
+        timeLabel.text = "\(timeFormatter.string(from: date.date)) (\(date.votes) \(vote))"
+    }
+    
     func configureAdd() {
+        layer.borderWidth = 0
+        layer.borderColor = nil
+        
         backgroundColor = redColor
         dateLabel.text = "Add Time"
         timeLabel.text = ""

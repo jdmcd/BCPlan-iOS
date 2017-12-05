@@ -26,6 +26,7 @@ class API {
         case denyInvitation(projectId: Int)
         case suggestTime(projectId: Int)
         case pickMeetingDate(projectId: Int, meetingDateId: Int)
+        case vote(meetingDateId: Int)
         
         var endpoint: String {
             switch self {
@@ -51,6 +52,8 @@ class API {
                 return "project/\(projectId)/date"
             case .pickMeetingDate(let projectId, let meetingDateId):
                 return "project/\(projectId)/date/\(meetingDateId)"
+            case .vote(let meetingDateId):
+                return "vote/\(meetingDateId)"
             }
         }
     }

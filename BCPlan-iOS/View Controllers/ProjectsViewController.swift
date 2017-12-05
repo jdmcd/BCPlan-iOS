@@ -146,6 +146,11 @@ class ProjectsViewController: UIViewController {
             guard let project = sender as? Project else { return }
             
             detailsVC.project = project
+        } else if segue.identifier == Constants.showAcceptedProjects {
+            guard let detailsVC = segue.destination as? AcceptedProjectViewController else { return }
+            guard let project = sender as? Project else { return }
+            
+            detailsVC.project = project
         }
     }
     
@@ -281,7 +286,11 @@ extension ProjectsViewController: UITableViewDelegate {
         }
         
         if let project = selectedProject {
-            performSegue(withIdentifier: Constants.pushToProjectDetails, sender: project)
+            if currentSection == .admin {
+                performSegue(withIdentifier: Constants.pushToProjectDetails, sender: project)
+            } else {
+                performSegue(withIdentifier: Constants.showAcceptedProjects, sender: project)
+            }
         }
     }
     
