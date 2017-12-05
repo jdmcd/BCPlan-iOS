@@ -15,6 +15,7 @@ class AcceptedProjectViewController: UIViewController {
     @IBOutlet private weak var suggestedTimesCollectionView: UICollectionView!
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var attendingMembersLabel: UILabel!
+    @IBOutlet private weak var attendingButton: UIButton!
     
     var project: Project!
     private var detailedProject: DetailedProject?
@@ -25,6 +26,7 @@ class AcceptedProjectViewController: UIViewController {
         attendingMembersLabel.isHidden = true
         tableView.isHidden = true
         tableView.tableFooterView = UIView()
+        attendingButton.isHidden = true
         
         let suggestedNib = UINib(nibName: "SuggestedTimeCollectionViewCell", bundle: nil)
         suggestedTimesCollectionView.register(suggestedNib, forCellWithReuseIdentifier: Constants.suggestedTime)
@@ -35,13 +37,56 @@ class AcceptedProjectViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.getData()
+        getData()
+    }
+    
+    private func checkForRequestingAttendanceResponse() {
+        guard let detailedProject = detailedProject else { return }
+        if detailedProject.hasSelectedDate() {
+            attendingButton.isHidden = false
+            
+            if detailedProject.attending {
+                attendingButton.setTitle("Mark as not attending", for: .normal)
+            } else {
+                attendingButton.setTitle("Mark as attending", for: .normal)
+            }
+        }
     }
     
     private func reloadAttendingMembers() {
-        attendingMembersLabel.isHidden = false
-        tableView.isHidden = false
+        guard let detailedProject = detailedProject else { return }
+        if detailedProject.attendingUsers.count == 0 {
+            attendingMembersLabel.isHidden = true
+            tableView.isHidden = true
+        } else {
+            attendingMembersLabel.isHidden = false
+            tableView.isHidden = false
+        }
+
         tableView.reloadData()
+    }
+    
+    @IBAction private func attendanceButtonTapped(_ sender: UIButton) {
+        guard let detailedProject = detailedProject else { return }
+        
+        HUD.show(.progress)
+        let successHandler: ((EmptyResponseType?) -> Void) = { _ in
+            HUD.hide()
+            self.getData()
+        }
+        
+        let errorHandler: ((ErrorResponse?) -> Void) = { error in
+            HUD.hide()
+            self.showError(errorResponse: error)
+        }
+        
+        if detailedProject.attending {
+            let attendance = SetAttendance(projectId: project.id, attendance: .notAttending)
+            attendance.request(user: User.currentUser(), success: successHandler, error: errorHandler)
+        } else {
+            let attendance = SetAttendance(projectId: project.id, attendance: .attending)
+            attendance.request(user: User.currentUser(), success: successHandler, error: errorHandler)
+        }
     }
     
     private func getData() {
@@ -50,10 +95,8 @@ class AcceptedProjectViewController: UIViewController {
             HUD.hide()
             self.detailedProject = detailedProject
             self.suggestedTimesCollectionView.reloadData()
-            
-            if let dP = detailedProject, !dP.attendingUsers.isEmpty {
-                self.reloadAttendingMembers()
-            }
+            self.checkForRequestingAttendanceResponse()
+            self.reloadAttendingMembers()
         }
         
         let errorHandler: ((ErrorResponse?) -> Void) = { error in

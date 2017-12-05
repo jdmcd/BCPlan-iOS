@@ -11,8 +11,7 @@ import Alamofire
 
 class API {
     static let apiKey = "6ZysPb/H{HuY>tWeHbN}gN^d=cot*Ce&a78H38R47NpX7xBw^4MVi6hU{chZxYWD"
-//    static let baseUrl = "https://bcplan.herokuapp.com/api/v1/"
-    static let baseUrl = "http://0.0.0.0:8080/api/v1/"
+    static let baseUrl = "https://bcplan.herokuapp.com/api/v1/"
     
     enum Endpoint {
         case login
@@ -27,6 +26,7 @@ class API {
         case suggestTime(projectId: Int)
         case pickMeetingDate(projectId: Int, meetingDateId: Int)
         case vote(meetingDateId: Int)
+        case attendance(projectId: Int, attendance: SetAttendance.Attendance)
         
         var endpoint: String {
             switch self {
@@ -54,6 +54,12 @@ class API {
                 return "project/\(projectId)/date/\(meetingDateId)"
             case .vote(let meetingDateId):
                 return "vote/\(meetingDateId)"
+            case .attendance(let projectId, let attendance):
+                if attendance == .attending {
+                    return "project/\(projectId)/attend"
+                } else {
+                    return "project/\(projectId)/notAttend"
+                }
             }
         }
     }

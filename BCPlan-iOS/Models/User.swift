@@ -34,7 +34,7 @@ extension User {
         UserDefaults.standard.synchronize()
     }
     
-    static func clearCurrentUser() {
+    static func logout() {
         UserDefaults.standard.removeObject(forKey: userDefaultsKey)
         UserDefaults.standard.synchronize()
     }

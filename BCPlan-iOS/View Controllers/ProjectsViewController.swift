@@ -46,10 +46,14 @@ class ProjectsViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if !User.loggedIn() {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let navVc = storyboard.instantiateViewController(withIdentifier: Constants.loginNav)
-            present(navVc, animated: true, completion: nil)
+            showLogin()
         }
+    }
+    
+    private func showLogin() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let navVc = storyboard.instantiateViewController(withIdentifier: Constants.loginNav)
+        present(navVc, animated: true, completion: nil)
     }
     
     //MARK: - Actions
@@ -152,6 +156,11 @@ class ProjectsViewController: UIViewController {
             
             detailsVC.project = project
         }
+    }
+    
+    @IBAction private func logoutButtonTapped(_ sender: UIBarButtonItem) {
+        User.logout()
+        showLogin()
     }
     
     private func sectionsToShow() -> [SectionType] {
