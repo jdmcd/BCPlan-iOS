@@ -105,7 +105,7 @@ extension AcceptedProjectViewController: UICollectionViewDataSource, UICollectio
         guard let detailedProject = detailedProject else { return cell }
         let date = detailedProject.dates[indexPath.row]
         
-        if let votedFor = detailedProject.votedFor, votedFor == date.id {
+        if let votedFor = detailedProject.votedFor, votedFor == date.id, !detailedProject.hasSelectedDate() {
             cell.configureForVote(date: date)
         } else {
             cell.configure(date: date)
