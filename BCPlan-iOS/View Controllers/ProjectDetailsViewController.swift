@@ -12,14 +12,21 @@ import DZNEmptyDataSet
 
 class ProjectDetailsViewController: UIViewController {
     
+    @IBOutlet private weak var attendingMembersLabel: UILabel!
     @IBOutlet private weak var projectMemberCollectionView: UICollectionView!
     @IBOutlet private weak var suggestedTimesCollectionView: UICollectionView!
+    @IBOutlet private weak var attendingMembersTableView: UITableView!
     
     var project: Project!
     private var detailedProject: DetailedProject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        attendingMembersLabel.isHidden = true
+        attendingMembersTableView.isHidden = true
+        attendingMembersTableView.dataSource = self
+        attendingMembersTableView.tableFooterView = UIView()
         
         let circleNib = UINib(nibName: "CircleCollectionViewCell", bundle: nil)
         projectMemberCollectionView.register(circleNib, forCellWithReuseIdentifier: Constants.circleCollectionId)
@@ -37,6 +44,12 @@ class ProjectDetailsViewController: UIViewController {
         getData()
     }
     
+    private func reloadAttendingMembers() {
+        attendingMembersLabel.isHidden = false
+        attendingMembersTableView.isHidden = false
+        attendingMembersTableView.reloadData()
+    }
+    
     private func getData() {
         HUD.show(.progress)
         let successHandler: ((DetailedProject?) -> Void) = { detailedProject in
@@ -44,6 +57,10 @@ class ProjectDetailsViewController: UIViewController {
             self.detailedProject = detailedProject
             self.projectMemberCollectionView.reloadData()
             self.suggestedTimesCollectionView.reloadData()
+            
+            if let dP = detailedProject, !dP.attendingUsers.isEmpty {
+                self.reloadAttendingMembers()
+            }
         }
         
         let errorHandler: ((ErrorResponse?) -> Void) = { error in
@@ -168,12 +185,29 @@ extension ProjectDetailsViewController: UICollectionViewDataSource, UICollection
     }
 }
 
+extension ProjectDetailsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let detailedProject = detailedProject else { return 0 }
+        return detailedProject.attendingUsers.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.attendingMember, for: indexPath)
+        
+        let user = detailedProject?.attendingUsers[indexPath.row]
+        cell.textLabel?.text = user?.name
+        cell.detailTextLabel?.text = user?.email
+        
+        return cell
+    }
+}
+
 extension ProjectDetailsViewController: DZNEmptyDataSetSource {
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
         var text = ""
         if scrollView == projectMemberCollectionView {
             text = "No members added yet"
-        } else {
+        } else if scrollView == suggestedTimesCollectionView {
             text = "No times added yet"
         }
         

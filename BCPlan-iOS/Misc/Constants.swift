@@ -18,4 +18,5 @@ struct Constants {
     static let addUsers = "addUsers"
     static let addTime = "addTime"
     static let userCell = "userCell"
+    static let attendingMember = "attendingMember"
 }
