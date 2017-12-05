@@ -22,6 +22,8 @@ class API {
         case project(projectId: Int)
         case searchUser(projectId: Int, query: String)
         case inviteUser(projectId: Int, userId: Int)
+        case acceptInvitation(projectId: Int)
+        case denyInvitation(projectId: Int)
         
         var endpoint: String {
             switch self {
@@ -39,6 +41,10 @@ class API {
                 return "project/\(id)/user?query=\(query)"
             case .inviteUser(let projectId, let userId):
                 return "project/\(projectId)/invite/\(userId)"
+            case .acceptInvitation(let projectId):
+                return "invitation/\(projectId)/accept"
+            case .denyInvitation(let projectId):
+                return "invitation/\(projectId)/deny"
             }
         }
     }

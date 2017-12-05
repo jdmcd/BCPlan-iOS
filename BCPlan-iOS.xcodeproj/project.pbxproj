@@ -13,6 +13,7 @@
 		39029F0B1FD1077F00ABC48E /* SearchUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39029F0A1FD1077F00ABC48E /* SearchUsers.swift */; };
 		39029F0D1FD10F6500ABC48E /* InviteUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39029F0C1FD10F6500ABC48E /* InviteUser.swift */; };
 		39029F0F1FD1106A00ABC48E /* EmptyResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39029F0E1FD1106A00ABC48E /* EmptyResponseType.swift */; };
+		3902A5AE1FD4E37400ABC48E /* InvitationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902A5AD1FD4E37400ABC48E /* InvitationRequest.swift */; };
 		391B64FA1FCF546800C7377B /* ProjectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B64F91FCF546800C7377B /* ProjectDetailsViewController.swift */; };
 		391B64FC1FCF54BB00C7377B /* GetProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B64FB1FCF54BB00C7377B /* GetProject.swift */; };
 		391B65001FCF55B300C7377B /* DetailedProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391B64FF1FCF55B300C7377B /* DetailedProject.swift */; };
@@ -58,6 +59,7 @@
 		39029F0A1FD1077F00ABC48E /* SearchUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsers.swift; sourceTree = "<group>"; };
 		39029F0C1FD10F6500ABC48E /* InviteUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteUser.swift; sourceTree = "<group>"; };
 		39029F0E1FD1106A00ABC48E /* EmptyResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyResponseType.swift; sourceTree = "<group>"; };
+		3902A5AD1FD4E37400ABC48E /* InvitationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationRequest.swift; sourceTree = "<group>"; };
 		391B64F91FCF546800C7377B /* ProjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsViewController.swift; sourceTree = "<group>"; };
 		391B64FB1FCF54BB00C7377B /* GetProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProject.swift; sourceTree = "<group>"; };
 		391B64FF1FCF55B300C7377B /* DetailedProject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProject.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				391B64FB1FCF54BB00C7377B /* GetProject.swift */,
 				394FBFF21FCEEF7700AFB6A0 /* GetProjects.swift */,
 				39B74CE91FCE56E60037D263 /* LoginRequest.swift */,
+				3902A5AD1FD4E37400ABC48E /* InvitationRequest.swift */,
 				39B74CF31FCE72350037D263 /* RegisterRequest.swift */,
 			);
 			path = Requests;
@@ -407,6 +410,7 @@
 				391B65031FCF59D900C7377B /* TableSectionHeader.swift in Sources */,
 				394FC0021FCF49D000AFB6A0 /* Constants.swift in Sources */,
 				391B65001FCF55B300C7377B /* DetailedProject.swift in Sources */,
+				3902A5AE1FD4E37400ABC48E /* InvitationRequest.swift in Sources */,
 				391B64FC1FCF54BB00C7377B /* GetProject.swift in Sources */,
 				39B74CEA1FCE56E60037D263 /* LoginRequest.swift in Sources */,
 				39B74CE31FCE55760037D263 /* DefaultHeader.swift in Sources */,

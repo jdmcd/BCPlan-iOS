@@ -50,6 +50,7 @@ class LoginViewController: UIViewController {
             self.showError(errorResponse: error)
         }
         
+        
         LoginRequest().request(parameters: loginRequest, success: successHandler, error: errorHandler)
     }
 }

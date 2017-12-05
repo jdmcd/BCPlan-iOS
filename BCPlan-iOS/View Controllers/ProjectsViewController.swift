@@ -167,6 +167,59 @@ class ProjectsViewController: UIViewController {
         
         return sections
     }
+    
+    private func showInviteAlert(project: Project) {
+        let alertController = UIAlertController(title: "Invitation", message: "Accept or delete invitation for \(project.name)", preferredStyle: .alert)
+        let acceptButton = UIAlertAction(title: "Accept", style: .default) { _ in
+            self.accept(project: project)
+        }
+        
+        let deleteButton = UIAlertAction(title: "Delete", style: .destructive) { _ in
+            self.delete(project: project)
+        }
+        
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(acceptButton)
+        alertController.addAction(deleteButton)
+        alertController.addAction(cancelButton)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    private func accept(project: Project) {
+        HUD.show(.progress)
+        let successHandler: ((EmptyResponseType?) -> Void) = { _ in
+            HUD.hide()
+            self.getData()
+        }
+        
+        let errorHandler: ((ErrorResponse?) -> Void) = { error in
+            HUD.hide()
+            self.showError(errorResponse: error)
+        }
+        
+        guard let currentUser = User.currentUser() else { return }
+        InvitationRequest(projectId: project.id, requestType: .accept)
+            .request(user: currentUser, success: successHandler, error: errorHandler)
+    }
+    
+    private func delete(project: Project) {
+        HUD.show(.progress)
+        let successHandler: ((EmptyResponseType?) -> Void) = { _ in
+            HUD.hide()
+            self.getData()
+        }
+        
+        let errorHandler: ((ErrorResponse?) -> Void) = { error in
+            HUD.hide()
+            self.showError(errorResponse: error)
+        }
+        
+        guard let currentUser = User.currentUser() else { return }
+        InvitationRequest(projectId: project.id, requestType: .delete)
+            .request(user: currentUser, success: successHandler, error: errorHandler)
+    }
 }
 
 //MARK: - UITableViewDataSource
@@ -224,13 +277,11 @@ extension ProjectsViewController: UITableViewDelegate {
         } else if currentSection == .accepted {
             selectedProject = projectResponse.accepted[indexPath.row]
         } else if currentSection == .pending {
-            selectedProject = projectResponse.pending[indexPath.row]
+            showInviteAlert(project: projectResponse.pending[indexPath.row])
         }
         
         if let project = selectedProject {
             performSegue(withIdentifier: Constants.pushToProjectDetails, sender: project)
-        } else {
-            self.showError()
         }
     }
     
