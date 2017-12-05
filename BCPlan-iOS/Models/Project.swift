@@ -12,4 +12,5 @@ class Project: Codable, APIModel {
     var id: Int
     var name: String
     var user_id: Int
+    var meeting_date_id: Int?
 }

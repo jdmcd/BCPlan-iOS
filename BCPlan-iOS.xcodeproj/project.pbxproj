@@ -33,6 +33,7 @@
 		397691591FD6E89400ED7CB2 /* AddTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397691581FD6E89400ED7CB2 /* AddTimeViewController.swift */; };
 		3976915B1FD6EA2900ED7CB2 /* SuggestTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3976915A1FD6EA2900ED7CB2 /* SuggestTime.swift */; };
 		3976915D1FD6EAC000ED7CB2 /* SuggestTimeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3976915C1FD6EAC000ED7CB2 /* SuggestTimeRequest.swift */; };
+		3976915F1FD6EEA900ED7CB2 /* PickMeetingDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3976915E1FD6EEA900ED7CB2 /* PickMeetingDate.swift */; };
 		39B74CC31FCE4E810037D263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CC21FCE4E810037D263 /* AppDelegate.swift */; };
 		39B74CC51FCE4E810037D263 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CC41FCE4E810037D263 /* LoginViewController.swift */; };
 		39B74CC81FCE4E810037D263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B74CC61FCE4E810037D263 /* Main.storyboard */; };
@@ -82,6 +83,7 @@
 		397691581FD6E89400ED7CB2 /* AddTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimeViewController.swift; sourceTree = "<group>"; };
 		3976915A1FD6EA2900ED7CB2 /* SuggestTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestTime.swift; sourceTree = "<group>"; };
 		3976915C1FD6EAC000ED7CB2 /* SuggestTimeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestTimeRequest.swift; sourceTree = "<group>"; };
+		3976915E1FD6EEA900ED7CB2 /* PickMeetingDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickMeetingDate.swift; sourceTree = "<group>"; };
 		39B74CBF1FCE4E810037D263 /* BCPlan-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BCPlan-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B74CC21FCE4E810037D263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39B74CC41FCE4E810037D263 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 		39B74CE81FCE56DE0037D263 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				3976915E1FD6EEA900ED7CB2 /* PickMeetingDate.swift */,
 				3976915A1FD6EA2900ED7CB2 /* SuggestTime.swift */,
 				39029F0C1FD10F6500ABC48E /* InviteUser.swift */,
 				39029F0A1FD1077F00ABC48E /* SearchUsers.swift */,
@@ -438,6 +441,7 @@
 				391B64FA1FCF546800C7377B /* ProjectDetailsViewController.swift in Sources */,
 				39B74CD71FCE50AA0037D263 /* API.swift in Sources */,
 				39029F0B1FD1077F00ABC48E /* SearchUsers.swift in Sources */,
+				3976915F1FD6EEA900ED7CB2 /* PickMeetingDate.swift in Sources */,
 				3976915D1FD6EAC000ED7CB2 /* SuggestTimeRequest.swift in Sources */,
 				3976915B1FD6EA2900ED7CB2 /* SuggestTime.swift in Sources */,
 				39029F091FD103B200ABC48E /* AddUserViewController.swift in Sources */,

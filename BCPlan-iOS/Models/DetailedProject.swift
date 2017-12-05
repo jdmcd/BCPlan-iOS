@@ -12,6 +12,7 @@ class DetailedProject: Codable, APIModel {
     var id: Int
     var name: String
     var user_id: Int
+    var meeting_date_id: Int?
     var members: [Member]
     var dates: [MeetingDate]
     
@@ -25,5 +26,10 @@ class DetailedProject: Codable, APIModel {
         var id: Int
         var date: Date
         var votes: Int
+        var selected: Bool
+    }
+    
+    func hasSelectedDate() -> Bool {
+        return dates.map { $0.selected }.contains(true)
     }
 }

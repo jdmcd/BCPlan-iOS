@@ -25,12 +25,21 @@ class SuggestedTimeCollectionViewCell: UICollectionViewCell {
         return dateFormatter
     }()
     
+    let redColor = UIColor(red: 126.0/255.0, green: 31.0/255.0, blue: 22.0/255.0, alpha: 1.0)
+    let greenColor = UIColor(red: 151.0/255.0, green: 246.0/255.0, blue: 136.0/255.0, alpha: 1.0)
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 5
     }
 
     func configure(date: DetailedProject.MeetingDate) {
+        if date.selected {
+            backgroundColor = greenColor
+        } else {
+            backgroundColor = redColor
+        }
+        
         dateLabel.text = dateFormatter.string(from: date.date)
         
         var vote = "vote"
@@ -42,6 +51,7 @@ class SuggestedTimeCollectionViewCell: UICollectionViewCell {
     }
     
     func configureAdd() {
+        backgroundColor = redColor
         dateLabel.text = "Add Time"
         timeLabel.text = ""
     }
