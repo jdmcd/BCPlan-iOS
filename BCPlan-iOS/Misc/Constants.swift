@@ -16,5 +16,6 @@ struct Constants {
     static let circleCollectionId = "CircleCollection"
     static let suggestedTime = "SuggestedTime"
     static let addUsers = "addUsers"
+    static let addTime = "addTime"
     static let userCell = "userCell"
 }

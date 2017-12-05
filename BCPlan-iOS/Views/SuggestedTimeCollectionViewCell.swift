@@ -32,6 +32,17 @@ class SuggestedTimeCollectionViewCell: UICollectionViewCell {
 
     func configure(date: DetailedProject.MeetingDate) {
         dateLabel.text = dateFormatter.string(from: date.date)
-        timeLabel.text = timeFormatter.string(from: date.date)
+        
+        var vote = "vote"
+        if date.votes != 1 {
+            vote = "votes"
+        }
+        
+        timeLabel.text = "\(timeFormatter.string(from: date.date)) (\(date.votes) \(vote))"
+    }
+    
+    func configureAdd() {
+        dateLabel.text = "Add Time"
+        timeLabel.text = ""
     }
 }

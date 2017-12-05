@@ -24,6 +24,7 @@ class API {
         case inviteUser(projectId: Int, userId: Int)
         case acceptInvitation(projectId: Int)
         case denyInvitation(projectId: Int)
+        case suggestTime(projectId: Int)
         
         var endpoint: String {
             switch self {
@@ -45,6 +46,8 @@ class API {
                 return "invitation/\(projectId)/accept"
             case .denyInvitation(let projectId):
                 return "invitation/\(projectId)/deny"
+            case .suggestTime(let projectId):
+                return "project/\(projectId)/date"
             }
         }
     }

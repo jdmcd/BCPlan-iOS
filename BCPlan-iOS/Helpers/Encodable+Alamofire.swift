@@ -12,7 +12,10 @@ import Alamofire
 extension Encodable {
     func asDictionary() -> Parameters {
         do {
-            let data = try JSONEncoder().encode(self)
+            let encoder = JSONEncoder()
+            encoder.dateEncodingStrategy = .formatted(CodableDateFormatter.outgoingDateFormatter)
+            let data = try encoder.encode(self)
+            
             return try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] ?? [:]
         } catch {
             return [:]
@@ -21,7 +24,10 @@ extension Encodable {
     
     func asStringValueDictionary() -> HTTPHeaders {
         do {
-            let data = try JSONEncoder().encode(self)
+            let encoder = JSONEncoder()
+            encoder.dateEncodingStrategy = .formatted(CodableDateFormatter.outgoingDateFormatter)
+            let data = try encoder.encode(self)
+            
             return try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: String] ?? [:]
         } catch {
             return [:]

@@ -53,6 +53,7 @@ extension AddUserViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.userCell, for: indexPath)
         
         cell.textLabel?.text = users[indexPath.row].name
+        cell.detailTextLabel?.text = users[indexPath.row].email
         
         return cell
     }

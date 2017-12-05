@@ -52,14 +52,15 @@ class ProjectDetailsViewController: UIViewController {
         projectRequest.request(user: User.currentUser(), success: successHandler, error: errorHandler)
     }
     
-    private func addButtonTapped() {
-        performSegue(withIdentifier: Constants.addUsers, sender: project)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Constants.addUsers {
             guard let destination = segue.destination as? UINavigationController else { return }
             guard let vc = destination.viewControllers.first as? AddUserViewController else { return }
+            
+            vc.project = project
+        } else if segue.identifier == Constants.addTime {
+            guard let destination = segue.destination as? UINavigationController else { return }
+            guard let vc = destination.viewControllers.first as? AddTimeViewController else { return }
             
             vc.project = project
         }
@@ -73,7 +74,7 @@ extension ProjectDetailsViewController: UICollectionViewDataSource, UICollection
             return membersCount + 1
         } else {
             guard let datesCount = detailedProject?.dates.count else { return 0 }
-            return datesCount
+            return datesCount + 1
         }
     }
     
@@ -91,22 +92,35 @@ extension ProjectDetailsViewController: UICollectionViewDataSource, UICollection
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.suggestedTime, for: indexPath) as! SuggestedTimeCollectionViewCell
-            guard let detailedProject = detailedProject else { return cell }
-            cell.configure(date: detailedProject.dates[indexPath.row])
+            
+            if indexPath.row == 0 {
+                cell.configureAdd()
+            } else {
+                guard let detailedProject = detailedProject else { return cell }
+                cell.configure(date: detailedProject.dates[indexPath.row - 1])
+            }
+            
             return cell
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == projectMemberCollectionView && indexPath.row == 0 {
-            addButtonTapped()
+            performSegue(withIdentifier: Constants.addUsers, sender: nil)
+        } else if collectionView == suggestedTimesCollectionView && indexPath.row == 0 {
+            performSegue(withIdentifier: Constants.addTime, sender: nil)
         }
     }
 }
 
 extension ProjectDetailsViewController: DZNEmptyDataSetSource {
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let text = "No members added yet"
+        var text = ""
+        if scrollView == projectMemberCollectionView {
+            text = "No members added yet"
+        } else {
+            text = "No times added yet"
+        }
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = .left

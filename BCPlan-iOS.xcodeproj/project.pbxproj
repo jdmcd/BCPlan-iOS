@@ -30,6 +30,9 @@
 		394FBFFC1FCF155800AFB6A0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFFB1FCF155800AFB6A0 /* RegisterViewController.swift */; };
 		394FC0001FCF498F00AFB6A0 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FBFFF1FCF498F00AFB6A0 /* ProjectsViewController.swift */; };
 		394FC0021FCF49D000AFB6A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394FC0011FCF49D000AFB6A0 /* Constants.swift */; };
+		397691591FD6E89400ED7CB2 /* AddTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397691581FD6E89400ED7CB2 /* AddTimeViewController.swift */; };
+		3976915B1FD6EA2900ED7CB2 /* SuggestTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3976915A1FD6EA2900ED7CB2 /* SuggestTime.swift */; };
+		3976915D1FD6EAC000ED7CB2 /* SuggestTimeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3976915C1FD6EAC000ED7CB2 /* SuggestTimeRequest.swift */; };
 		39B74CC31FCE4E810037D263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CC21FCE4E810037D263 /* AppDelegate.swift */; };
 		39B74CC51FCE4E810037D263 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B74CC41FCE4E810037D263 /* LoginViewController.swift */; };
 		39B74CC81FCE4E810037D263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39B74CC61FCE4E810037D263 /* Main.storyboard */; };
@@ -76,6 +79,9 @@
 		394FBFFB1FCF155800AFB6A0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		394FBFFF1FCF498F00AFB6A0 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		394FC0011FCF49D000AFB6A0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		397691581FD6E89400ED7CB2 /* AddTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimeViewController.swift; sourceTree = "<group>"; };
+		3976915A1FD6EA2900ED7CB2 /* SuggestTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestTime.swift; sourceTree = "<group>"; };
+		3976915C1FD6EAC000ED7CB2 /* SuggestTimeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestTimeRequest.swift; sourceTree = "<group>"; };
 		39B74CBF1FCE4E810037D263 /* BCPlan-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BCPlan-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		39B74CC21FCE4E810037D263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39B74CC41FCE4E810037D263 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +188,7 @@
 		39B74CD91FCE50B60037D263 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				397691581FD6E89400ED7CB2 /* AddTimeViewController.swift */,
 				39029F081FD103B200ABC48E /* AddUserViewController.swift */,
 				391B64F91FCF546800C7377B /* ProjectDetailsViewController.swift */,
 				394FBFFF1FCF498F00AFB6A0 /* ProjectsViewController.swift */,
@@ -227,6 +234,7 @@
 		39B74CDD1FCE52330037D263 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				3976915C1FD6EAC000ED7CB2 /* SuggestTimeRequest.swift */,
 				391B650A1FCF65F400C7377B /* CreateProjectObject.swift */,
 				39B74CF11FCE71F30037D263 /* Register.swift */,
 				39B74CDE1FCE523F0037D263 /* Login.swift */,
@@ -239,6 +247,7 @@
 		39B74CE81FCE56DE0037D263 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				3976915A1FD6EA2900ED7CB2 /* SuggestTime.swift */,
 				39029F0C1FD10F6500ABC48E /* InviteUser.swift */,
 				39029F0A1FD1077F00ABC48E /* SearchUsers.swift */,
 				391B65081FCF656A00C7377B /* CreateProject.swift */,
@@ -419,6 +428,7 @@
 				39B74CF41FCE72350037D263 /* RegisterRequest.swift in Sources */,
 				391B650B1FCF65F400C7377B /* CreateProjectObject.swift in Sources */,
 				391B65131FCF6E7900C7377B /* CircleCollectionViewCell.swift in Sources */,
+				397691591FD6E89400ED7CB2 /* AddTimeViewController.swift in Sources */,
 				394FC0001FCF498F00AFB6A0 /* ProjectsViewController.swift in Sources */,
 				394FBFF31FCEEF7700AFB6A0 /* GetProjects.swift in Sources */,
 				39B74CF21FCE71F30037D263 /* Register.swift in Sources */,
@@ -428,6 +438,8 @@
 				391B64FA1FCF546800C7377B /* ProjectDetailsViewController.swift in Sources */,
 				39B74CD71FCE50AA0037D263 /* API.swift in Sources */,
 				39029F0B1FD1077F00ABC48E /* SearchUsers.swift in Sources */,
+				3976915D1FD6EAC000ED7CB2 /* SuggestTimeRequest.swift in Sources */,
+				3976915B1FD6EA2900ED7CB2 /* SuggestTime.swift in Sources */,
 				39029F091FD103B200ABC48E /* AddUserViewController.swift in Sources */,
 				394FBFFC1FCF155800AFB6A0 /* RegisterViewController.swift in Sources */,
 				391B65091FCF656A00C7377B /* CreateProject.swift in Sources */,
